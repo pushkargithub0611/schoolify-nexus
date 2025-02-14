@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Brain, GraduationCap, Users, IndianRupee, School } from "lucide-react";
 import {
@@ -79,14 +78,14 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="min-h-screen bg-[#1A1F2C] flex items-center justify-center py-16 px-4 md:px-8 lg:px-12 overflow-hidden">
-        <div className="container mx-auto">
+        <div className="container max-w-[1920px] mx-auto px-4 md:px-8 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Carousel - Left side with smaller size */}
             <motion.div
               variants={floatingAnimation}
               initial="initial"
               animate="animate"
-              className="relative w-full max-w-lg mx-auto lg:mx-0"
+              className="relative w-full max-w-2xl mx-auto lg:mx-0"
             >
               <Carousel className="w-full">
                 <CarouselContent>
