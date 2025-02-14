@@ -121,11 +121,21 @@ const Index = () => {
   ];
 
   const stateDistributionData = [
-    { name: 'Maharashtra', value: 1200 },
-    { name: 'Karnataka', value: 900 },
-    { name: 'Tamil Nadu', value: 1100 },
-    { name: 'Gujarat', value: 800 },
-    { name: 'Delhi', value: 500 }
+    { state: 'Maharashtra', schools: 1200 },
+    { state: 'Karnataka', schools: 900 },
+    { state: 'Tamil Nadu', schools: 1100 },
+    { state: 'Gujarat', schools: 800 },
+    { state: 'Delhi', schools: 500 },
+    { state: 'Uttar Pradesh', schools: 1500 },
+    { state: 'West Bengal', schools: 950 },
+    { state: 'Rajasthan', schools: 850 },
+    { state: 'Bihar', schools: 700 },
+    { state: 'Telangana', schools: 600 },
+    { state: 'Kerala', schools: 750 },
+    { state: 'Madhya Pradesh', schools: 850 },
+    { state: 'Andhra Pradesh', schools: 800 },
+    { state: 'Punjab', schools: 550 },
+    { state: 'Haryana', schools: 450 }
   ];
 
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
@@ -395,7 +405,7 @@ const Index = () => {
               </div>
             </motion.div>
 
-            {/* State Distribution Chart */}
+            {/* State Distribution Chart - Replaced Pie with Bar Chart */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -405,23 +415,26 @@ const Index = () => {
               <h3 className="text-xl font-semibold mb-6">Schools by State</h3>
               <div className="h-[300px]">
                 <ResponsiveContainer width="100%" height="100%">
-                  <PieChart>
-                    <Pie
-                      data={stateDistributionData}
-                      cx="50%"
-                      cy="50%"
-                      labelLine={false}
-                      outerRadius={100}
-                      fill="#8884d8"
-                      dataKey="value"
-                      label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                    >
-                      {stateDistributionData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                      ))}
-                    </Pie>
+                  <BarChart 
+                    data={stateDistributionData} 
+                    layout="vertical"
+                    margin={{ top: 5, right: 30, left: 100, bottom: 5 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis type="number" />
+                    <YAxis 
+                      dataKey="state" 
+                      type="category" 
+                      tick={{ fontSize: 12 }} 
+                      width={100}
+                    />
                     <Tooltip />
-                  </PieChart>
+                    <Bar 
+                      dataKey="schools" 
+                      fill="#8884d8"
+                      name="Number of Schools"
+                    />
+                  </BarChart>
                 </ResponsiveContainer>
               </div>
             </motion.div>
