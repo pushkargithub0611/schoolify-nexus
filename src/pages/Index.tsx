@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Brain, GraduationCap, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -487,15 +486,16 @@ const Index = () => {
           </div>
         </section>
 
+        {/* View More Resources Button */}
+        <div className="container mx-auto flex justify-center py-12">
+          <Button variant="outline" className="text-xl px-8 py-6 rounded-full border-2 border-black hover:bg-black hover:text-white transition-all">
+            View More Resources
+          </Button>
+        </div>
+
         {/* Resources Section */}
         <section className="py-20 px-6 md:px-8 lg:px-12 bg-cream-50">
           <div className="container mx-auto">
-            <div className="flex justify-center mb-12">
-              <Button variant="outline" className="text-xl px-8 py-6 rounded-full border-2 border-black hover:bg-black hover:text-white transition-all">
-                View More Resources
-              </Button>
-            </div>
-
             <Carousel className="w-full">
               <CarouselContent className="-ml-2 md:-ml-4">
                 {resourceItems.map((item, index) => (
