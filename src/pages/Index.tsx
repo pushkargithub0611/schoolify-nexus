@@ -140,6 +140,7 @@ const Index = () => {
       errors
     }
   } = useForm();
+
   const onSubmit = (data: any) => {
     toast({
       title: "Form submitted!",
@@ -147,6 +148,7 @@ const Index = () => {
     });
     console.log(data);
   };
+
   return (
     <div className="w-full">
       <Header />
@@ -583,7 +585,7 @@ const Index = () => {
         <section className="relative bg-[#0EA5E9] overflow-hidden">
           <div className="absolute bottom-0 left-0 right-0">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full">
-              <path fill="#ffffff" fillOpacity="1" d="M0,96L1440,32L1440,320L0,320Z"></path>
+              <path fill="#ffffff" fillOpacity="1" d="M0,96L1440,32L1440,320L0,320Z" />
             </svg>
           </div>
           <div className="container mx-auto px-4 py-16 relative z-10">
@@ -731,4 +733,4 @@ const Index = () => {
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Our Services</a></li>
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
-                  <li><a href="#"
+                  <li><a href="#" className
