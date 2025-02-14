@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from "framer-motion";
 import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin } from "lucide-react";
@@ -534,7 +535,7 @@ const Index = () => {
         </section>
 
         {/* Contact Form Section */}
-        <section className="relative bg-[#0EA5E9] text-white overflow-hidden">
+        <section className="relative bg-[#0EA5E9] overflow-hidden">
           <div className="absolute bottom-0 left-0 right-0">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full">
               <path fill="#ffffff" fillOpacity="1" d="M0,96L1440,32L1440,320L0,320Z"></path>
@@ -546,7 +547,7 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold mb-4 text-center">Let's Connect!</h2>
+              <h2 className="text-4xl font-bold mb-4 text-center text-white">Let's Connect!</h2>
               <p className="text-gray-200 mb-8 text-center">
                 Fill out the form below to connect with our sales team to discuss how SamarthX can help with your specific school or district needs.
               </p>
@@ -558,7 +559,7 @@ const Index = () => {
                       type="text"
                       placeholder="First Name"
                       {...register("firstName", { required: true })}
-                      className="w-full px-4 py-2 bg-[#0EA5E9] border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
+                      className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
                     />
                   </div>
                   <div>
@@ -566,7 +567,7 @@ const Index = () => {
                       type="text"
                       placeholder="Last Name"
                       {...register("lastName", { required: true })}
-                      className="w-full px-4 py-2 bg-[#0EA5E9] border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
+                      className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
                     />
                   </div>
                 </div>
@@ -577,7 +578,7 @@ const Index = () => {
                       type="email"
                       placeholder="Email"
                       {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
-                      className="w-full px-4 py-2 bg-[#0EA5E9] border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
+                      className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
                     />
                   </div>
                   <div>
@@ -585,7 +586,7 @@ const Index = () => {
                       type="tel"
                       placeholder="Phone Number"
                       {...register("phone", { required: true })}
-                      className="w-full px-4 py-2 bg-[#0EA5E9] border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
+                      className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
                     />
                   </div>
                 </div>
@@ -596,7 +597,7 @@ const Index = () => {
                       type="text"
                       placeholder="Job Title"
                       {...register("jobTitle", { required: true })}
-                      className="w-full px-4 py-2 bg-[#0EA5E9] border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
+                      className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
                     />
                   </div>
                   <div>
@@ -604,14 +605,14 @@ const Index = () => {
                       type="text"
                       placeholder="School/District"
                       {...register("school", { required: true })}
-                      className="w-full px-4 py-2 bg-[#0EA5E9] border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
+                      className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
                     />
                   </div>
                 </div>
 
                 <select
                   {...register("country", { required: true })}
-                  className="w-full px-4 py-2 bg-[#0EA5E9] border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
+                  className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
                 >
                   <option value="" className="text-gray-800">Select Country</option>
                   <option value="india" className="text-gray-800">India</option>
@@ -623,7 +624,7 @@ const Index = () => {
                   placeholder="How can we help you?"
                   {...register("message", { required: true })}
                   rows={4}
-                  className="w-full px-4 py-2 bg-[#0EA5E9] border border-gray-300 rounded-lg text-black placeholder-gray-600 focus:outline-none focus:border-white resize-none"
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-600 focus:outline-none focus:border-white resize-none"
                 ></textarea>
 
                 <div className="text-center">
@@ -685,4 +686,18 @@ const Index = () => {
               <div>
                 <h4 className="text-lg font-semibold mb-4">Contact</h4>
                 <ul className="space-y-2">
-                  <li className="flex items
+                  <li className="flex items-center gap-2 text-gray-400">
+                    <Mail className="w-4 h-4" />
+                    <span>contact@samarthx.com</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  );
+};
+
+export default Index;
