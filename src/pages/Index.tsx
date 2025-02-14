@@ -142,7 +142,6 @@ const Index: React.FC<IndexProps> = () => {
     <div className="w-full">
       <Header />
       <main className="min-h-screen">
-        
         <section className="min-h-screen flex items-center justify-center py-16 px-4 md:px-8 lg:px-12 overflow-hidden rounded-2xl bg-violet-400 hover:bg-violet-300">
           <div className="container max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -765,3 +764,4 @@ const Index: React.FC<IndexProps> = () => {
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <Instagram className="w-6 h-6" />
                 </a>
+                <
