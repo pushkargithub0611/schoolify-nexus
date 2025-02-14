@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import { Brain, GraduationCap, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, ChevronLeft, ChevronRight } from "lucide-react";
+import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,7 +9,7 @@ import Header from "@/components/Header";
 import { useForm } from "react-hook-form";
 import { toast } from "@/components/ui/use-toast";
 
-const Index: React.FC = () => {
+const Index = () => {
   const features = [{
     icon: <Brain className="w-6 h-6" />,
     title: "AI-Powered Insights",
@@ -436,7 +436,7 @@ const Index: React.FC = () => {
         </section>
 
         {/* Features Section */}
-        <section className="section-padding bg-white">
+        <section className="py-20 px-6 md:px-8 lg:px-12 bg-white">
           <div className="container mx-auto">
             <div className="text-center mb-16">
               <motion.h2 initial={{
@@ -481,7 +481,7 @@ const Index: React.FC = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="section-padding bg-neutral-50">
+        <section className="py-20 px-6 md:px-8 lg:px-12 bg-neutral-50">
           <div className="container mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
@@ -553,7 +553,7 @@ const Index: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding bg-white">
+        <section className="py-20 px-6 md:px-8 lg:px-12 bg-white">
           <div className="container mx-auto text-center">
             <motion.div initial={{
               opacity: 0,
@@ -585,7 +585,6 @@ const Index: React.FC = () => {
               <path fill="#ffffff" fillOpacity="1" d="M0,96L1440,32L1440,320L0,320Z"></path>
             </svg>
           </div>
-          
           <div className="container mx-auto px-4 py-16 relative z-10">
             <div className="max-w-2xl mx-auto space-y-6">
               <motion.div
@@ -702,4 +701,4 @@ const Index: React.FC = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                   </a>
                   <a href="#" className="hover:text-primary transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6
