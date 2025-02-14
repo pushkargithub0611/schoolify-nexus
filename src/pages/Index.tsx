@@ -62,6 +62,18 @@ const Index = () => {
     }
   ];
 
+  const floatingAnimation = {
+    initial: { y: 0 },
+    animate: {
+      y: [0, -20, 0],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -70,9 +82,9 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Text Content */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+              variants={floatingAnimation}
+              initial="initial"
+              animate="animate"
               className="text-white"
             >
               <span className="inline-block px-4 py-2 rounded-full bg-white/10 text-sm mb-6">
@@ -91,10 +103,11 @@ const Index = () => {
 
             {/* Carousel */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              variants={floatingAnimation}
+              initial="initial"
+              animate="animate"
               className="relative"
+              style={{ animationDelay: "0.5s" }}
             >
               <Carousel className="w-full">
                 <CarouselContent>
