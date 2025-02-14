@@ -1,5 +1,6 @@
+
 import { motion } from "framer-motion";
-import { Brain, GraduationCap, Users, IndianRupee, School, FileBarChart, TrendingUp, Buildings } from "lucide-react";
+import { Brain, GraduationCap, Users, IndianRupee, School, FileBarChart, TrendingUp, Building } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import {
   Select,
@@ -249,7 +250,7 @@ const Index = () => {
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-primary/10 rounded-lg">
-                  <Buildings className="w-6 h-6 text-primary" />
+                  <Building className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold">Total Schools</h3>
               </div>
