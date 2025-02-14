@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Brain, GraduationCap, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -104,34 +105,39 @@ const Index = () => {
 
   const resourceItems = [
     {
-      title: "3 Ways Edtech Can Maximize Productivity in Understaffed K-12 Tech Teams",
-      type: "INFOGRAPHIC",
-      description: "Learn how interoperable, easy-to-use edtech products with robust training",
-      image: "/lovable-uploads/f641d362-8986-4fe7-99b4-4ef989ea89a0.png"
+      title: "Best Practices for Digital Learning in K-12 Education",
+      type: "GUIDE",
+      description: "Essential strategies for implementing effective digital learning programs in schools",
+      image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23",
+      link: "/resources/digital-learning"
     },
     {
-      title: "3 Ways Edtech Can Maximize Productivity in Understaffed K-12 Tech Teams",
-      type: "INFOGRAPHIC",
-      description: "Learn how interoperable, easy-to-use edtech products with robust training",
-      image: "/lovable-uploads/f641d362-8986-4fe7-99b4-4ef989ea89a0.png"
+      title: "Building a Strong School Community: A Principal's Handbook",
+      type: "EBOOK",
+      description: "Comprehensive guide for school leaders to foster engagement and collaboration",
+      image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1",
+      link: "/resources/community-building"
     },
     {
-      title: "3 Ways Edtech Can Maximize Productivity in Understaffed K-12 Tech Teams",
-      type: "INFOGRAPHIC",
-      description: "Learn how interoperable, easy-to-use edtech products with robust training",
-      image: "/lovable-uploads/f641d362-8986-4fe7-99b4-4ef989ea89a0.png"
+      title: "Student Assessment Strategies for the Modern Classroom",
+      type: "WEBINAR",
+      description: "Learn innovative approaches to student evaluation and progress tracking",
+      image: "https://images.unsplash.com/photo-1487252665478-49b61b47f302",
+      link: "/resources/assessment"
     },
     {
-      title: "3 Ways Edtech Can Maximize Productivity in Understaffed K-12 Tech Teams",
-      type: "INFOGRAPHIC",
-      description: "Learn how interoperable, easy-to-use edtech products with robust training",
-      image: "/lovable-uploads/f641d362-8986-4fe7-99b4-4ef989ea89a0.png"
+      title: "STEM Education: Bridging Theory and Practice",
+      type: "RESEARCH",
+      description: "Latest research findings on effective STEM education implementation",
+      image: "https://images.unsplash.com/photo-1438565434616-3ef039228b15",
+      link: "/resources/stem-education"
     },
     {
-      title: "3 Ways Edtech Can Maximize Productivity in Understaffed K-12 Tech Teams",
-      type: "INFOGRAPHIC",
-      description: "Learn how interoperable, easy-to-use edtech products with robust training",
-      image: "/lovable-uploads/f641d362-8986-4fe7-99b4-4ef989ea89a0.png"
+      title: "Inclusive Education: Creating Supportive Learning Environments",
+      type: "TOOLKIT",
+      description: "Practical tools and strategies for implementing inclusive education practices",
+      image: "https://images.unsplash.com/photo-1501286353178-1ec881214838",
+      link: "/resources/inclusive-education"
     }
   ];
 
@@ -499,18 +505,19 @@ const Index = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
-                      className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                      className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer group"
+                      onClick={() => window.location.href = item.link}
                     >
-                      <div className="aspect-[4/3]">
+                      <div className="aspect-[4/3] overflow-hidden">
                         <img
                           src={item.image}
                           alt={item.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
                       <div className="p-6">
                         <p className="text-sm font-semibold text-primary mb-2">{item.type}</p>
-                        <h3 className="text-lg font-bold mb-2 line-clamp-2">{item.title}</h3>
+                        <h3 className="text-lg font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors">{item.title}</h3>
                         <p className="text-neutral-600 text-sm">{item.description}</p>
                       </div>
                     </motion.div>
