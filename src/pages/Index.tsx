@@ -1,4 +1,3 @@
-<lov-code>
 import * as React from 'react';
 import { motion } from "framer-motion";
 import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin, Facebook, Instagram, Phone, MapPin } from "lucide-react";
@@ -12,7 +11,7 @@ import { toast } from "@/components/ui/use-toast";
 
 interface IndexProps {}
 
-const Index = () => {
+const Index: React.FC<IndexProps> = () => {
   const features = [{
     icon: <Brain className="w-6 h-6" />,
     title: "AI-Powered Insights",
@@ -467,7 +466,7 @@ const Index = () => {
                 }} viewport={{
                   once: true
                 }} className="text-3xl md:text-4xl font-bold mb-4">
-                Why Choose Our Platform?
+                Why Choose Our Platform?\
               </motion.h2>
               <p className="text-neutral-600 max-w-2xl mx-auto">
                 Streamline your school operations with our comprehensive suite of
@@ -584,7 +583,7 @@ const Index = () => {
                 once: true
               }} className="max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Transform Your School Management?
+                Ready to Transform Your School Management?\
               </h2>
               <p className="text-neutral-600 mb-8">
                 Join hundreds of schools already benefiting from our AI-powered ERP platform
@@ -756,4 +755,4 @@ const Index = () => {
               <p className="text-gray-400">
                 Empowering educational institutions with cutting-edge technology solutions.
               </p>
-              <div className="flex space-x-
+              <div className="
