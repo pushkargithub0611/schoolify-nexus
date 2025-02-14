@@ -134,22 +134,9 @@ const Index = () => {
             <p className="text-neutral-600">Track and analyze educational progress across India</p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="rounded-xl overflow-hidden shadow-xl mb-12"
-          >
-            <img 
-              src="/lovable-uploads/dc6761db-f908-44c9-8d7c-3b4c7faa6444.png" 
-              alt="School Performance Dashboard" 
-              className="w-full h-auto"
-            />
-          </motion.div>
-
           {/* Filters */}
           <Select>
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-[180px] mb-8">
               <SelectValue placeholder="Select a state" />
             </SelectTrigger>
             <SelectContent>
@@ -221,6 +208,20 @@ const Index = () => {
               </p>
             </motion.div>
           </div>
+
+          {/* Dashboard Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="rounded-xl overflow-hidden shadow-xl"
+          >
+            <img 
+              src="/lovable-uploads/dc6761db-f908-44c9-8d7c-3b4c7faa6444.png" 
+              alt="School Performance Dashboard" 
+              className="w-full h-auto"
+            />
+          </motion.div>
         </div>
       </section>
 
