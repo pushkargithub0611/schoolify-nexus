@@ -64,7 +64,7 @@ const Index = () => {
   };
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center py-16 px-4 md:px-8 lg:px-12 overflow-hidden rounded-2xl bg-zinc-400 hover:bg-zinc-300">
+      <section className="min-h-screen flex items-center justify-center py-16 px-4 md:px-8 lg:px-12 overflow-hidden rounded-2xl bg-blue-400 hover:bg-blue-300">
         <div className="container max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Carousel - Left side with larger size */}
@@ -112,9 +112,7 @@ const Index = () => {
               y: 0
             }} transition={{
               delay: 0.2
-            }} className="inline-block px-6 py-2 rounded-full bg-[#9b87f5]/20 text-[#9b87f5] text-lg font-medium mb-8">
-                Transform Your School Management
-              </motion.span>
+            }} className="inline-block px-6 py-2 rounded-full bg-[#9b87f5]/20 mb-8 text-4xl font-extrabold text-gray-900">SamarthX</motion.span>
               <motion.h1 initial={{
               opacity: 0,
               y: 20
@@ -146,7 +144,7 @@ const Index = () => {
             }} transition={{
               delay: 0.5
             }}>
-                <button className="bg-[#9b87f5] hover:bg-[#8b77e5] px-8 py-4 rounded-xl text-xl text-white font-medium transition-all duration-300 shadow-lg hover:shadow-[#9b87f5]/25">
+                <button className="px-8 py-4 rounded-xl text-xl text-white font-medium transition-all duration-300 shadow-lg hover:shadow-[#9b87f5]/25 bg-cyan-950 hover:bg-cyan-800">
                   Get Started Today
                 </button>
               </motion.div>
