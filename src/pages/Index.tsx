@@ -1,4 +1,3 @@
-<lov-code>
 import * as React from 'react';
 import { motion } from "framer-motion";
 import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin, Facebook, Instagram, Phone, MapPin } from "lucide-react";
@@ -467,7 +466,8 @@ const Index: React.FC<IndexProps> = () => {
                 }} viewport={{
                   once: true
                 }} className="text-3xl md:text-4xl font-bold mb-4">
-                Why Choose Our Platform?\n              </motion.h2>
+                Why Choose Our Platform?
+              </motion.h2>
               <p className="text-neutral-600 max-w-2xl mx-auto">
                 Streamline your school operations with our comprehensive suite of
                 tools and features
@@ -753,4 +753,4 @@ const Index: React.FC<IndexProps> = () => {
               <h3 className="text-2xl font-bold">
                 Samarth<span className="text-[#FF9933]">X</span>
               </h3>
-              <p className="text-gray-400
+              <p className="text-gray-400">
