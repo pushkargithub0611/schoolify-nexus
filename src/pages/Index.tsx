@@ -1,6 +1,12 @@
-
 import { motion } from "framer-motion";
 import { Brain, GraduationCap, Users, IndianRupee, School } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Index = () => {
   const features = [
@@ -33,6 +39,25 @@ const Index = () => {
     { number: "24/7", label: "Support" }
   ];
 
+  const carouselImages = [
+    {
+      url: "https://images.unsplash.com/photo-1613898239254-8c8f384c2336",
+      caption: "Modern Digital Classrooms"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1627556704302-624286467c65",
+      caption: "Interactive Learning Experience"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1617529497471-9218633199c0",
+      caption: "Smart Education Solutions"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
+      caption: "Empowering Education"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -57,6 +82,56 @@ const Index = () => {
               Get Started Today
             </button>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Carousel Section */}
+      <section className="section-padding bg-white">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Transforming Education Across India
+            </h2>
+            <p className="text-neutral-600 max-w-2xl mx-auto">
+              See how our platform is revolutionizing education management in schools across the country
+            </p>
+          </motion.div>
+
+          <Carousel className="w-full max-w-5xl mx-auto">
+            <CarouselContent>
+              {carouselImages.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-1">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="relative aspect-[16/9] overflow-hidden rounded-xl"
+                    >
+                      <img
+                        src={image.url}
+                        alt={image.caption}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
+                        <p className="text-white text-lg font-medium">
+                          {image.caption}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex -left-4" />
+            <CarouselNext className="hidden md:flex -right-4" />
+          </Carousel>
         </div>
       </section>
 
