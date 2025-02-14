@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from "framer-motion";
 import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin } from "lucide-react";
@@ -718,4 +719,26 @@ const Index = () => {
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-
+                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                </ul>
+              </div>
+
+              {/* Contact */}
+              <div>
+                <h4 className="text-lg font-semibold mb-4">Contact</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-gray-400">
+                    <Mail className="w-4 h-4" />
+                    <span>contact@samarthx.com</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  );
+};
+
+export default Index;
