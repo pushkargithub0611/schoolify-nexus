@@ -3,6 +3,7 @@ import { Brain, GraduationCap, Users, IndianRupee, School, FileBarChart, Trendin
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
+import IndiaMap from '@/components/IndiaMap';
 
 const Index = () => {
   const features = [{
@@ -426,49 +427,15 @@ const Index = () => {
               </div>
             </motion.div>
 
-            {/* State Distribution Chart - Replaced Pie with Bar Chart */}
+            {/* Replacing bar chart with India Map */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="glass p-6 rounded-xl"
             >
-              <h3 className="text-xl font-semibold mb-6">Schools by State</h3>
-              <div className="h-[600px]"> {/* Increased height for better readability */}
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart
-                    data={stateDistributionData}
-                    layout="vertical"
-                    margin={{ top: 5, right: 30, left: 120, bottom: 5 }} // Increased left margin
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis
-                      type="number"
-                      tickFormatter={(value) => `${value.toLocaleString()}`} // Format large numbers
-                    />
-                    <YAxis
-                      dataKey="state"
-                      type="category"
-                      tick={{ fontSize: 11 }} // Adjusted font size
-                      width={120} // Increased width for state names
-                      interval={0} // Show all labels
-                    />
-                    <Tooltip
-                      formatter={(value) => [`${value.toLocaleString()} schools`, 'Number of Schools']}
-                      labelStyle={{ color: '#666' }}
-                    />
-                    <Bar
-                      dataKey="schools"
-                      fill="#8884d8"
-                      name="Number of Schools"
-                    >
-                      {stateDistributionData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={`hsl(${index * (360 / stateDistributionData.length)}, 70%, 60%)`} />
-                      ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
+              <h3 className="text-xl font-semibold mb-6">Schools Distribution Across India</h3>
+              <IndiaMap />
             </motion.div>
 
             {/* Year-over-Year Comparison */}
