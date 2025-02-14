@@ -1,16 +1,8 @@
-
 import { motion } from "framer-motion";
 import { Brain, GraduationCap, Users, IndianRupee, School, FileBarChart, TrendingUp, Building } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
 const Index = () => {
   const features = [{
     icon: <Brain className="w-6 h-6" />,
@@ -29,7 +21,6 @@ const Index = () => {
     title: "Comprehensive Management",
     description: "Complete school management solution from admissions to alumni"
   }];
-
   const stats = [{
     number: "500+",
     label: "Schools"
@@ -43,7 +34,6 @@ const Index = () => {
     number: "24/7",
     label: "Support"
   }];
-
   const carouselImages = [{
     url: "https://images.unsplash.com/photo-1613898239254-8c8f384c2336",
     caption: "Modern Digital Classrooms",
@@ -61,7 +51,6 @@ const Index = () => {
     caption: "Empowering Education",
     description: "Empower educators with tools that make teaching more effective and learning more engaging"
   }];
-
   const floatingAnimation = {
     initial: {
       y: 0
@@ -77,26 +66,51 @@ const Index = () => {
   };
 
   // Sample data for the visualization
-  const schoolData = [
-    { state: 'Maharashtra', schools: 1200, students: 150000, performance: 85 },
-    { state: 'Karnataka', schools: 900, students: 120000, performance: 82 },
-    { state: 'Tamil Nadu', schools: 1100, students: 140000, performance: 88 },
-    { state: 'Gujarat', schools: 800, students: 100000, performance: 80 },
-    { state: 'Delhi', schools: 500, students: 80000, performance: 86 },
-  ];
-
-  const chartData = [
-    { name: '2019', students: 350000 },
-    { name: '2020', students: 450000 },
-    { name: '2021', students: 600000 },
-    { name: '2022', students: 800000 },
-    { name: '2023', students: 1000000 },
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const schoolData = [{
+    state: 'Maharashtra',
+    schools: 1200,
+    students: 150000,
+    performance: 85
+  }, {
+    state: 'Karnataka',
+    schools: 900,
+    students: 120000,
+    performance: 82
+  }, {
+    state: 'Tamil Nadu',
+    schools: 1100,
+    students: 140000,
+    performance: 88
+  }, {
+    state: 'Gujarat',
+    schools: 800,
+    students: 100000,
+    performance: 80
+  }, {
+    state: 'Delhi',
+    schools: 500,
+    students: 80000,
+    performance: 86
+  }];
+  const chartData = [{
+    name: '2019',
+    students: 350000
+  }, {
+    name: '2020',
+    students: 450000
+  }, {
+    name: '2021',
+    students: 600000
+  }, {
+    name: '2022',
+    students: 800000
+  }, {
+    name: '2023',
+    students: 1000000
+  }];
+  return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center py-16 px-4 md:px-8 lg:px-12 overflow-hidden rounded-2xl bg-blue-400 hover:bg-blue-300">
+      <section className="min-h-screen flex items-center justify-center py-16 px-4 md:px-8 lg:px-12 overflow-hidden rounded-2xl bg-violet-400 hover:bg-violet-300">
         <div className="container max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Carousel - Left side with larger size */}
@@ -190,12 +204,15 @@ const Index = () => {
       {/* Interactive Visualization Section */}
       <section className="py-20 px-6 md:px-8 lg:px-12 bg-white">
         <div className="container max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Educational Impact Dashboard</h2>
             <p className="text-neutral-600">Track and analyze educational progress across India</p>
           </motion.div>
@@ -208,11 +225,9 @@ const Index = () => {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All States</SelectItem>
-                {schoolData.map((data) => (
-                  <SelectItem key={data.state} value={data.state.toLowerCase()}>
+                {schoolData.map(data => <SelectItem key={data.state} value={data.state.toLowerCase()}>
                     {data.state}
-                  </SelectItem>
-                ))}
+                  </SelectItem>)}
               </SelectContent>
             </Select>
 
@@ -242,12 +257,15 @@ const Index = () => {
 
           {/* Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="glass p-6 rounded-xl"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} className="glass p-6 rounded-xl">
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-primary/10 rounded-lg">
                   <Building className="w-6 h-6 text-primary" />
@@ -261,13 +279,17 @@ const Index = () => {
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="glass p-6 rounded-xl"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            delay: 0.1
+          }} className="glass p-6 rounded-xl">
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-primary/10 rounded-lg">
                   <Users className="w-6 h-6 text-primary" />
@@ -281,13 +303,17 @@ const Index = () => {
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="glass p-6 rounded-xl"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            delay: 0.2
+          }} className="glass p-6 rounded-xl">
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-primary/10 rounded-lg">
                   <FileBarChart className="w-6 h-6 text-primary" />
@@ -303,12 +329,15 @@ const Index = () => {
           </div>
 
           {/* Chart */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass p-6 rounded-xl"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} className="glass p-6 rounded-xl">
             <h3 className="text-xl font-semibold mb-6">Student Growth Trend</h3>
             <div className="h-[400px]">
               <ResponsiveContainer width="100%" height="100%">
@@ -417,8 +446,6 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
