@@ -11,7 +11,7 @@ import { toast } from "@/components/ui/use-toast";
 
 interface IndexProps {}
 
-const Index: React.FC<IndexProps> = () => {
+const Index = () => {
   const features = [{
     icon: <Brain className="w-6 h-6" />,
     title: "AI-Powered Insights",
@@ -146,7 +146,7 @@ const Index: React.FC<IndexProps> = () => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <div className="w-full">
         <Header />
         <main className="min-h-screen">
@@ -755,3 +755,5 @@ const Index: React.FC<IndexProps> = () => {
                 </h3>
                 <p className="text-gray-400">
                   Empowering educational institutions with cutting-edge technology solutions.
+                </p>
+                <div className="flex space
