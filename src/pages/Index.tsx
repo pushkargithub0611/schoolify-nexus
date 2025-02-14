@@ -1,4 +1,3 @@
-<lov-code>
 import * as React from 'react';
 import { motion } from "framer-motion";
 import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin, Facebook, Instagram, Phone, MapPin } from "lucide-react";
@@ -754,4 +753,4 @@ const Index: React.FC<IndexProps> = () => {
             {/* Quick Links */}
             <div>
               <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
-              <ul className
+              <ul className="space-
