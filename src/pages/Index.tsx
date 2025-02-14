@@ -486,16 +486,18 @@ const Index = () => {
           </div>
         </section>
 
-        {/* View More Resources Button */}
-        <div className="container mx-auto flex justify-center py-12">
-          <Button variant="outline" className="text-xl px-8 py-6 rounded-full border-2 border-black hover:bg-black hover:text-white transition-all">
-            View More Resources
-          </Button>
-        </div>
-
         {/* Resources Section */}
         <section className="py-20 px-6 md:px-8 lg:px-12 bg-cream-50">
           <div className="container mx-auto">
+            <div className="flex justify-center mb-12">
+              <Button 
+                className="text-lg px-12 py-3 rounded-full bg-white text-gray-800 hover:bg-gray-50 border-2 border-gray-200 transition-all shadow-sm"
+                variant="outline"
+              >
+                View More Resources
+              </Button>
+            </div>
+
             <Carousel className="w-full">
               <CarouselContent className="-ml-2 md:-ml-4">
                 {resourceItems.map((item, index) => (
