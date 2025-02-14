@@ -148,10 +148,10 @@ const Index: React.FC<IndexProps> = () => {
     <div className="w-full">
       <Header />
       <main className="min-h-screen">
-        <section className="min-h-screen flex items-center justify-center py-16 px-4 md:px-8 lg:px-12 overflow-hidden rounded-2xl bg-violet-400 hover:bg-violet-300">
-          <div className="container max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div variants={floatingAnimation} initial="initial" animate="animate" className="relative w-full max-w-3xl mx-auto lg:mx-0">
+        <section className="min-h-[90vh] flex items-center justify-center py-20 px-4 md:px-8 lg:px-12 overflow-hidden rounded-2xl bg-violet-400 hover:bg-violet-300">
+          <div className="container max-w-[1920px] mx-auto px-4 md:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <motion.div variants={floatingAnimation} initial="initial" animate="animate" className="relative w-full max-w-4xl mx-auto lg:mx-0">
                 <Carousel className="w-full">
                   <CarouselContent>
                     {carouselImages.map((image, index) =>
@@ -177,10 +177,10 @@ const Index: React.FC<IndexProps> = () => {
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
                             <div className="absolute bottom-0 left-0 right-0 p-8">
-                              <h3 className="text-white text-2xl font-bold mb-3">
+                              <h3 className="text-white text-2xl md:text-3xl font-bold mb-3">
                                 {image.caption}
                               </h3>
-                              <p className="text-white/90 text-lg">
+                              <p className="text-white/90 text-lg md:text-xl">
                                 {image.description}
                               </p>
                             </div>
@@ -767,71 +767,4 @@ const Index: React.FC<IndexProps> = () => {
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <Twitter className="w-6 h-6" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Instagram className="w-6 h-6" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Linkedin className="w-6 h-6" />
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Our Services</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Success Stories</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Support Center</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3 text-gray-400">
-                  <MapPin className="w-5 h-5" />
-                  <span>123 Education Street, Mumbai, India 400001</span>
-                </li>
-                <li className="flex items-center gap-3 text-gray-400">
-                  <Phone className="w-5 h-5" />
-                  <span>+91 (800) 123-4567</span>
-                </li>
-                <li className="flex items-center gap-3 text-gray-400">
-                  <Mail className="w-5 h-5" />
-                  <span>contact@samarthx.com</span>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-6">Resources</h4>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-700 mt-12 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-gray-400 text-sm">
-                © {new Date().getFullYear()} SamarthX. All rights reserved.
-              </p>
-              <div className="flex gap-6">
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-};
-
-export default Index;
+                <a href="#" className="text-gray-40
