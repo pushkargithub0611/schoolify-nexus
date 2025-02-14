@@ -1,4 +1,4 @@
-
+<lov-code>
 import * as React from 'react';
 import { motion } from "framer-motion";
 import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin, Facebook, Instagram, Phone, MapPin } from "lucide-react";
@@ -726,6 +726,27 @@ const Index: React.FC<IndexProps> = () => {
       {/* Footer */}
       <footer className="bg-[#1A1F2C] text-white">
         <div className="container mx-auto px-4 py-16">
+          {/* Image Section */}
+          <div className="mb-12">
+            <div className="relative h-[300px] rounded-xl overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+                alt="Modern Digital Learning Environment"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F2C] via-transparent to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <h3 className="text-3xl font-bold mb-2 text-white">
+                    Transform Your School
+                  </h3>
+                  <p className="text-gray-200 text-lg">
+                    Join the digital education revolution with SamarthX
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {/* Company Info */}
@@ -733,86 +754,4 @@ const Index: React.FC<IndexProps> = () => {
               <h3 className="text-2xl font-bold">
                 Samarth<span className="text-[#FF9933]">X</span>
               </h3>
-              <p className="text-gray-400">
-                Empowering educational institutions with cutting-edge technology solutions.
-              </p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Facebook className="w-6 h-6" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Twitter className="w-6 h-6" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Instagram className="w-6 h-6" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Linkedin className="w-6 h-6" />
-                </a>
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Our Services</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Success Stories</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Support Center</a></li>
-              </ul>
-            </div>
-
-            {/* Solutions */}
-            <div>
-              <h4 className="text-lg font-semibold mb-6">Solutions</h4>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">School Management</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Learning Management</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Student Information System</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Analytics Dashboard</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Mobile App</a></li>
-              </ul>
-            </div>
-
-            {/* Contact Info */}
-            <div>
-              <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3 text-gray-400">
-                  <MapPin className="w-5 h-5" />
-                  <span>123 Education Street, Mumbai, India 400001</span>
-                </li>
-                <li className="flex items-center gap-3 text-gray-400">
-                  <Phone className="w-5 h-5" />
-                  <span>+91 (800) 123-4567</span>
-                </li>
-                <li className="flex items-center gap-3 text-gray-400">
-                  <Mail className="w-5 h-5" />
-                  <span>contact@samarthx.com</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Bottom Footer */}
-          <div className="border-t border-gray-700 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-gray-400 text-sm">
-                © {new Date().getFullYear()} SamarthX. All rights reserved.
-              </p>
-              <div className="flex gap-6">
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-};
-
-export default Index;
+              <p className="text-gray-400
