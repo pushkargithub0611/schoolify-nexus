@@ -42,96 +42,94 @@ const Index = () => {
   const carouselImages = [
     {
       url: "https://images.unsplash.com/photo-1613898239254-8c8f384c2336",
-      caption: "Modern Digital Classrooms"
+      caption: "Modern Digital Classrooms",
+      description: "Experience next-generation learning environments powered by AI and cutting-edge technology"
     },
     {
       url: "https://images.unsplash.com/photo-1627556704302-624286467c65",
-      caption: "Interactive Learning Experience"
+      caption: "Interactive Learning Experience",
+      description: "Enable engaging and interactive learning experiences with our comprehensive digital tools"
     },
     {
       url: "https://images.unsplash.com/photo-1617529497471-9218633199c0",
-      caption: "Smart Education Solutions"
+      caption: "Smart Education Solutions",
+      description: "Implement smart solutions that transform traditional education into modern learning experiences"
     },
     {
       url: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
-      caption: "Empowering Education"
+      caption: "Empowering Education",
+      description: "Empower educators with tools that make teaching more effective and learning more engaging"
     }
   ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="hero-gradient min-h-[90vh] flex items-center justify-center section-padding">
+      <section className="hero-gradient min-h-[90vh] flex items-center justify-center section-padding overflow-hidden">
         <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center text-white max-w-4xl mx-auto"
-          >
-            <span className="inline-block px-4 py-2 rounded-full bg-white/10 text-sm mb-6">
-              Transform Your School Management
-            </span>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Revolutionize Education Management with AI-Powered ERP
-            </h1>
-            <p className="text-lg md:text-xl mb-8 text-white/90">
-              The complete school management solution designed specifically for Indian educational institutions
-            </p>
-            <button className="glass px-8 py-4 rounded-lg text-white font-medium hover:bg-white/30 transition-all">
-              Get Started Today
-            </button>
-          </motion.div>
-        </div>
-      </section>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-white"
+            >
+              <span className="inline-block px-4 py-2 rounded-full bg-white/10 text-sm mb-6">
+                Transform Your School Management
+              </span>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Revolutionize Education Management with AI-Powered ERP
+              </h1>
+              <p className="text-lg md:text-xl mb-8 text-white/90">
+                The complete school management solution designed specifically for Indian educational institutions
+              </p>
+              <button className="glass px-8 py-4 rounded-lg text-white font-medium hover:bg-white/30 transition-all">
+                Get Started Today
+              </button>
+            </motion.div>
 
-      {/* Carousel Section */}
-      <section className="section-padding bg-white">
-        <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Transforming Education Across India
-            </h2>
-            <p className="text-neutral-600 max-w-2xl mx-auto">
-              See how our platform is revolutionizing education management in schools across the country
-            </p>
-          </motion.div>
-
-          <Carousel className="w-full max-w-5xl mx-auto">
-            <CarouselContent>
-              {carouselImages.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="p-1">
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="relative aspect-[16/9] overflow-hidden rounded-xl"
-                    >
-                      <img
-                        src={image.url}
-                        alt={image.caption}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-                        <p className="text-white text-lg font-medium">
-                          {image.caption}
-                        </p>
+            {/* Carousel */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="relative"
+            >
+              <Carousel className="w-full">
+                <CarouselContent>
+                  {carouselImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="p-1">
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: index * 0.1 }}
+                          className="relative aspect-video overflow-hidden rounded-xl glass"
+                        >
+                          <img
+                            src={image.url}
+                            alt={image.caption}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                            <h3 className="text-white text-xl font-semibold mb-2">
+                              {image.caption}
+                            </h3>
+                            <p className="text-white/90 text-sm">
+                              {image.description}
+                            </p>
+                          </div>
+                        </motion.div>
                       </div>
-                    </motion.div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-4" />
-            <CarouselNext className="hidden md:flex -right-4" />
-          </Carousel>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="hidden md:flex -left-4 bg-white/20 hover:bg-white/30 text-white border-none" />
+                <CarouselNext className="hidden md:flex -right-4 bg-white/20 hover:bg-white/30 text-white border-none" />
+              </Carousel>
+            </motion.div>
+          </div>
         </div>
       </section>
 
