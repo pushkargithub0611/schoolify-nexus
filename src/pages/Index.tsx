@@ -3,7 +3,6 @@ import { Brain, GraduationCap, Users, IndianRupee, School, FileBarChart, Trendin
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Header from "@/components/Header";
-
 const Index = () => {
   const features = [{
     icon: <Brain className="w-6 h-6" />,
@@ -22,7 +21,6 @@ const Index = () => {
     title: "Comprehensive Management",
     description: "Complete school management solution from admissions to alumni"
   }];
-
   const stats = [{
     number: "500+",
     label: "Schools"
@@ -36,7 +34,6 @@ const Index = () => {
     number: "24/7",
     label: "Support"
   }];
-
   const carouselImages = [{
     url: "https://images.unsplash.com/photo-1613898239254-8c8f384c2336",
     caption: "Modern Digital Classrooms",
@@ -54,9 +51,10 @@ const Index = () => {
     caption: "Empowering Education",
     description: "Empower educators with tools that make teaching more effective and learning more engaging"
   }];
-
   const floatingAnimation = {
-    initial: { y: 0 },
+    initial: {
+      y: 0
+    },
     animate: {
       y: [0, -20, 0],
       transition: {
@@ -66,9 +64,7 @@ const Index = () => {
       }
     }
   };
-
-  return (
-    <>
+  return <>
       <Header />
       <div className="min-h-screen">
         {/* Hero Section */}
@@ -79,9 +75,16 @@ const Index = () => {
               <motion.div variants={floatingAnimation} initial="initial" animate="animate" className="relative w-full max-w-3xl mx-auto lg:mx-0">
                 <Carousel className="w-full">
                   <CarouselContent>
-                    {carouselImages.map((image, index) => (
-                      <CarouselItem key={index}>
-                        <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: index * 0.1 }} className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl">
+                    {carouselImages.map((image, index) => <CarouselItem key={index}>
+                        <motion.div initial={{
+                      opacity: 0,
+                      scale: 0.95
+                    }} animate={{
+                      opacity: 1,
+                      scale: 1
+                    }} transition={{
+                      delay: index * 0.1
+                    }} className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl">
                           <img src={image.url} alt={image.caption} className="w-full h-full object-cover" />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
                             <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -94,8 +97,7 @@ const Index = () => {
                             </div>
                           </div>
                         </motion.div>
-                      </CarouselItem>
-                    ))}
+                      </CarouselItem>)}
                   </CarouselContent>
                   <CarouselPrevious className="hidden md:flex -left-4 bg-white/10 hover:bg-white/20 text-white border-none" />
                   <CarouselNext className="hidden md:flex -right-4 bg-white/10 hover:bg-white/20 text-white border-none" />
@@ -103,17 +105,51 @@ const Index = () => {
               </motion.div>
 
               {/* Text Content - Right side */}
-              <motion.div variants={floatingAnimation} initial="initial" animate="animate" className="text-left lg:pl-12" style={{ animationDelay: "0.3s" }}>
-                <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="inline-block px-6 py-2 rounded-full bg-[#1A1F2C] mb-8 text-4xl text-gray-50 font-extrabold">
+              <motion.div variants={floatingAnimation} initial="initial" animate="animate" className="text-left lg:pl-12" style={{
+              animationDelay: "0.3s"
+            }}>
+                <motion.span initial={{
+                opacity: 0,
+                y: 20
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                delay: 0.2
+              }} className="inline-block px-6 py-2 rounded-full bg-[#1A1F2C] mb-8 text-4xl text-gray-50 font-extrabold">
                   SamarthX
                 </motion.span>
-                <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="text-6xl md:text-7xl font-bold mb-8 leading-tight bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+                <motion.h1 initial={{
+                opacity: 0,
+                y: 20
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                delay: 0.3
+              }} className="text-6xl md:text-7xl font-bold mb-8 leading-tight bg-gradient-to-r from-white to-white/80 bg-clip-text text-gray-900">
                   Revolutionize Education Management
                 </motion.h1>
-                <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="text-2xl text-white/70 mb-12 leading-relaxed">
+                <motion.p initial={{
+                opacity: 0,
+                y: 20
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                delay: 0.4
+              }} className="text-2xl mb-12 leading-relaxed text-slate-700 font-medium">
                   The complete school management solution designed specifically for Indian educational institutions, powered by cutting-edge AI technology.
                 </motion.p>
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+                <motion.div initial={{
+                opacity: 0,
+                y: 20
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                delay: 0.5
+              }}>
                   <button className="px-8 py-4 rounded-xl text-xl text-white font-medium transition-all duration-300 shadow-lg hover:shadow-[#9b87f5]/25 bg-[#1A1F2C] hover:bg-[#2A2F3C]">
                     Get Started Today
                   </button>
@@ -126,12 +162,15 @@ const Index = () => {
         {/* School Performance Dashboard Section */}
         <section className="py-20 px-6 md:px-8 lg:px-12 bg-white">
           <div className="container max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4">Educational Impact Dashboard</h2>
               <p className="text-neutral-600">Track and analyze educational progress across India</p>
             </motion.div>
@@ -151,12 +190,15 @@ const Index = () => {
 
             {/* Stats Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="glass p-6 rounded-xl"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} className="glass p-6 rounded-xl">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 bg-primary/10 rounded-lg">
                     <Building className="w-6 h-6 text-primary" />
@@ -170,13 +212,17 @@ const Index = () => {
                 </p>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="glass p-6 rounded-xl"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              delay: 0.1
+            }} className="glass p-6 rounded-xl">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 bg-primary/10 rounded-lg">
                     <Users className="w-6 h-6 text-primary" />
@@ -190,13 +236,17 @@ const Index = () => {
                 </p>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="glass p-6 rounded-xl"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              delay: 0.2
+            }} className="glass p-6 rounded-xl">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 bg-primary/10 rounded-lg">
                     <FileBarChart className="w-6 h-6 text-primary" />
@@ -212,17 +262,16 @@ const Index = () => {
             </div>
 
             {/* Dashboard Image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="rounded-xl overflow-hidden shadow-xl"
-            >
-              <img 
-                src="/lovable-uploads/dc6761db-f908-44c9-8d7c-3b4c7faa6444.png" 
-                alt="School Performance Dashboard" 
-                className="w-full h-auto"
-              />
+            <motion.div initial={{
+            opacity: 0,
+            scale: 0.95
+          }} whileInView={{
+            opacity: 1,
+            scale: 1
+          }} viewport={{
+            once: true
+          }} className="rounded-xl overflow-hidden shadow-xl">
+              <img src="/lovable-uploads/dc6761db-f908-44c9-8d7c-3b4c7faa6444.png" alt="School Performance Dashboard" className="w-full h-auto" />
             </motion.div>
           </div>
         </section>
@@ -231,7 +280,15 @@ const Index = () => {
         <section className="section-padding bg-white">
           <div className="container mx-auto">
             <div className="text-center mb-16">
-              <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl md:text-4xl font-bold mb-4">
+              <motion.h2 initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} className="text-3xl md:text-4xl font-bold mb-4">
                 Why Choose Our Platform?
               </motion.h2>
               <p className="text-neutral-600 max-w-2xl mx-auto">
@@ -241,15 +298,23 @@ const Index = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => (
-                <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} className="glass p-6 rounded-xl card-hover">
+              {features.map((feature, index) => <motion.div key={index} initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              delay: index * 0.1
+            }} className="glass p-6 rounded-xl card-hover">
                   <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-primary">
                     {feature.icon}
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                   <p className="text-neutral-600">{feature.description}</p>
-                </motion.div>
-              ))}
+                </motion.div>)}
             </div>
           </div>
         </section>
@@ -258,14 +323,22 @@ const Index = () => {
         <section className="section-padding bg-neutral-50">
           <div className="container mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <motion.div key={index} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} className="text-center">
+              {stats.map((stat, index) => <motion.div key={index} initial={{
+              opacity: 0,
+              scale: 0.9
+            }} whileInView={{
+              opacity: 1,
+              scale: 1
+            }} viewport={{
+              once: true
+            }} transition={{
+              delay: index * 0.1
+            }} className="text-center">
                   <h3 className="text-4xl md:text-5xl font-bold text-primary mb-2">
                     {stat.number}
                   </h3>
                   <p className="text-neutral-600">{stat.label}</p>
-                </motion.div>
-              ))}
+                </motion.div>)}
             </div>
           </div>
         </section>
@@ -273,7 +346,15 @@ const Index = () => {
         {/* CTA Section */}
         <section className="section-padding bg-white">
           <div className="container mx-auto text-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto">
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} className="max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Ready to Transform Your School Management?
               </h2>
@@ -288,8 +369,6 @@ const Index = () => {
           </div>
         </section>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default Index;
