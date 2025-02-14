@@ -1,3 +1,4 @@
+<lov-code>
 import * as React from 'react';
 import { motion } from "framer-motion";
 import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin, Facebook, Instagram, Phone, MapPin } from "lucide-react";
@@ -755,4 +756,4 @@ const Index = () => {
               <p className="text-gray-400">
                 Empowering educational institutions with cutting-edge technology solutions.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-
