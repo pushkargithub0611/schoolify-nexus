@@ -1,4 +1,4 @@
-
+<lov-code>
 import React from 'react';
 import { motion } from "framer-motion";
 import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin } from "lucide-react";
@@ -576,110 +576,108 @@ const Index = () => {
         </section>
 
         {/* Contact Form Section */}
-        <section className="relative bg-[#003B73] text-white overflow-hidden">
+        <section className="relative bg-[#0EA5E9] text-white overflow-hidden">
           <div className="absolute bottom-0 left-0 right-0">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full">
               <path fill="#ffffff" fillOpacity="1" d="M0,96L1440,32L1440,320L0,320Z"></path>
             </svg>
           </div>
           <div className="container mx-auto px-4 py-16 relative z-10">
-            <div className="max-w-2xl mx-auto space-y-6">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-4xl font-bold mb-4 text-center">Let's Connect!</h2>
-                <p className="text-gray-200 mb-8 text-center">
-                  Fill out the form below to connect with our sales team to discuss how SamarthX can help with your specific school or district needs.
-                </p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl font-bold mb-4 text-center">Let's Connect!</h2>
+              <p className="text-gray-200 mb-8 text-center">
+                Fill out the form below to connect with our sales team to discuss how SamarthX can help with your specific school or district needs.
+              </p>
 
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <input
-                        type="text"
-                        placeholder="First Name"
-                        {...register("firstName", { required: true })}
-                        className="w-full px-4 py-2 bg-white/10 border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white rounded-md"
-                      />
-                    </div>
-                    <div>
-                      <input
-                        type="text"
-                        placeholder="Last Name"
-                        {...register("lastName", { required: true })}
-                        className="w-full px-4 py-2 bg-white/10 border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white rounded-md"
-                      />
-                    </div>
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="First Name"
+                      {...register("firstName", { required: true })}
+                      className="w-full px-4 py-2 bg-white/10 border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white rounded-md"
+                    />
                   </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <input
-                        type="email"
-                        placeholder="Email"
-                        {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
-                        className="w-full px-4 py-2 bg-white/10 border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white rounded-md"
-                      />
-                    </div>
-                    <div>
-                      <input
-                        type="tel"
-                        placeholder="Phone Number"
-                        {...register("phone", { required: true })}
-                        className="w-full px-4 py-2 bg-white/10 border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white rounded-md"
-                      />
-                    </div>
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Last Name"
+                      {...register("lastName", { required: true })}
+                      className="w-full px-4 py-2 bg-white/10 border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white rounded-md"
+                    />
                   </div>
+                </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <input
-                        type="text"
-                        placeholder="Job Title"
-                        {...register("jobTitle", { required: true })}
-                        className="w-full px-4 py-2 bg-white/10 border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white rounded-md"
-                      />
-                    </div>
-                    <div>
-                      <input
-                        type="text"
-                        placeholder="School/District"
-                        {...register("school", { required: true })}
-                        className="w-full px-4 py-2 bg-white/10 border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white rounded-md"
-                      />
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+                      className="w-full px-4 py-2 bg-white/10 border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white rounded-md"
+                    />
                   </div>
+                  <div>
+                    <input
+                      type="tel"
+                      placeholder="Phone Number"
+                      {...register("phone", { required: true })}
+                      className="w-full px-4 py-2 bg-white/10 border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white rounded-md"
+                    />
+                  </div>
+                </div>
 
-                  <select
-                    {...register("country", { required: true })}
-                    className="w-full px-4 py-2 bg-white/10 border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white rounded-md"
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Job Title"
+                      {...register("jobTitle", { required: true })}
+                      className="w-full px-4 py-2 bg-white/10 border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white rounded-md"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="School/District"
+                      {...register("school", { required: true })}
+                      className="w-full px-4 py-2 bg-white/10 border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white rounded-md"
+                    />
+                  </div>
+                </div>
+
+                <select
+                  {...register("country", { required: true })}
+                  className="w-full px-4 py-2 bg-white/10 border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white rounded-md"
+                >
+                  <option value="" className="text-gray-800">Select Country</option>
+                  <option value="india" className="text-gray-800">India</option>
+                  <option value="usa" className="text-gray-800">United States</option>
+                  <option value="uk" className="text-gray-800">United Kingdom</option>
+                </select>
+
+                <textarea
+                  placeholder="How can we help you?"
+                  {...register("message", { required: true })}
+                  rows={4}
+                  className="w-full px-4 py-2 bg-white/10 border border-gray-300 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-white resize-none"
+                ></textarea>
+
+                <div className="text-center">
+                  <Button 
+                    type="submit"
+                    className="px-8 py-3 bg-[#ea384c] text-white rounded-full hover:bg-[#d62f41] transition-colors"
                   >
-                    <option value="" className="text-gray-800">Select Country</option>
-                    <option value="india" className="text-gray-800">India</option>
-                    <option value="usa" className="text-gray-800">United States</option>
-                    <option value="uk" className="text-gray-800">United Kingdom</option>
-                  </select>
-
-                  <textarea
-                    placeholder="How can we help you?"
-                    {...register("message", { required: true })}
-                    rows={4}
-                    className="w-full px-4 py-2 bg-white/10 border border-gray-300 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-white resize-none"
-                  ></textarea>
-
-                  <div className="text-center">
-                    <Button 
-                      type="submit"
-                      className="px-8 py-3 bg-[#ea384c] text-white rounded-full hover:bg-[#d62f41] transition-colors"
-                    >
-                      Submit
-                    </Button>
-                  </div>
-                </form>
-              </motion.div>
-            </div>
+                    Submit
+                  </Button>
+                </div>
+              </form>
+            </motion.div>
           </div>
         </section>
 
@@ -723,33 +721,3 @@ const Index = () => {
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
                 </ul>
-              </div>
-
-              {/* Contact Info */}
-              <div>
-                <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center space-x-2">
-                    <Building className="text-gray-400 w-4 h-4" />
-                    <span className="text-gray-400">+91 123 456 7890</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <Mail className="text-gray-400 w-4 h-4" />
-                    <span className="text-gray-400">support@samarthx.com</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Copyright */}
-            <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-              <p className="text-gray-400">© 2024 SamarthX. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
-      </div>
-    </div>
-  );
-};
-
-export default Index;
