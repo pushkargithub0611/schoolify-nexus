@@ -46,11 +46,11 @@ const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-neutral-700 hover:text-primary">Products</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="p-4 w-[400px]">
+                  <div className="p-4 w-[400px] bg-[#7E69AB] text-white">
                     <div className="grid gap-3">
-                      <NavigationMenuLink href="#">Student Information System</NavigationMenuLink>
-                      <NavigationMenuLink href="#">Learning Management</NavigationMenuLink>
-                      <NavigationMenuLink href="#">Assessment Management</NavigationMenuLink>
+                      <NavigationMenuLink href="#" className="hover:bg-[#6E59A5] px-3 py-2 rounded-md transition-colors">Student Information System</NavigationMenuLink>
+                      <NavigationMenuLink href="#" className="hover:bg-[#6E59A5] px-3 py-2 rounded-md transition-colors">Learning Management</NavigationMenuLink>
+                      <NavigationMenuLink href="#" className="hover:bg-[#6E59A5] px-3 py-2 rounded-md transition-colors">Assessment Management</NavigationMenuLink>
                     </div>
                   </div>
                 </NavigationMenuContent>
@@ -59,11 +59,11 @@ const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-neutral-700 hover:text-primary">Solve a Need</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="p-4 w-[400px]">
+                  <div className="p-4 w-[400px] bg-[#7E69AB] text-white">
                     <div className="grid gap-3">
-                      <NavigationMenuLink href="#">Enrollment</NavigationMenuLink>
-                      <NavigationMenuLink href="#">Communication</NavigationMenuLink>
-                      <NavigationMenuLink href="#">Data Management</NavigationMenuLink>
+                      <NavigationMenuLink href="#" className="hover:bg-[#6E59A5] px-3 py-2 rounded-md transition-colors">Enrollment</NavigationMenuLink>
+                      <NavigationMenuLink href="#" className="hover:bg-[#6E59A5] px-3 py-2 rounded-md transition-colors">Communication</NavigationMenuLink>
+                      <NavigationMenuLink href="#" className="hover:bg-[#6E59A5] px-3 py-2 rounded-md transition-colors">Data Management</NavigationMenuLink>
                     </div>
                   </div>
                 </NavigationMenuContent>
@@ -72,11 +72,11 @@ const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-neutral-700 hover:text-primary">Support a Role</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="p-4 w-[400px]">
+                  <div className="p-4 w-[400px] bg-[#7E69AB] text-white">
                     <div className="grid gap-3">
-                      <NavigationMenuLink href="#">Teachers</NavigationMenuLink>
-                      <NavigationMenuLink href="#">Administrators</NavigationMenuLink>
-                      <NavigationMenuLink href="#">IT Staff</NavigationMenuLink>
+                      <NavigationMenuLink href="#" className="hover:bg-[#6E59A5] px-3 py-2 rounded-md transition-colors">Teachers</NavigationMenuLink>
+                      <NavigationMenuLink href="#" className="hover:bg-[#6E59A5] px-3 py-2 rounded-md transition-colors">Administrators</NavigationMenuLink>
+                      <NavigationMenuLink href="#" className="hover:bg-[#6E59A5] px-3 py-2 rounded-md transition-colors">IT Staff</NavigationMenuLink>
                     </div>
                   </div>
                 </NavigationMenuContent>
@@ -85,11 +85,11 @@ const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-neutral-700 hover:text-primary">Resources</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="p-4 w-[400px]">
+                  <div className="p-4 w-[400px] bg-[#7E69AB] text-white">
                     <div className="grid gap-3">
-                      <NavigationMenuLink href="#">Blog</NavigationMenuLink>
-                      <NavigationMenuLink href="#">Case Studies</NavigationMenuLink>
-                      <NavigationMenuLink href="#">Webinars</NavigationMenuLink>
+                      <NavigationMenuLink href="#" className="hover:bg-[#6E59A5] px-3 py-2 rounded-md transition-colors">Blog</NavigationMenuLink>
+                      <NavigationMenuLink href="#" className="hover:bg-[#6E59A5] px-3 py-2 rounded-md transition-colors">Case Studies</NavigationMenuLink>
+                      <NavigationMenuLink href="#" className="hover:bg-[#6E59A5] px-3 py-2 rounded-md transition-colors">Webinars</NavigationMenuLink>
                     </div>
                   </div>
                 </NavigationMenuContent>
@@ -98,11 +98,11 @@ const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-neutral-700 hover:text-primary">Company</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="p-4 w-[400px]">
+                  <div className="p-4 w-[400px] bg-[#7E69AB] text-white">
                     <div className="grid gap-3">
-                      <NavigationMenuLink href="#">About Us</NavigationMenuLink>
-                      <NavigationMenuLink href="#">Careers</NavigationMenuLink>
-                      <NavigationMenuLink href="#">Contact</NavigationMenuLink>
+                      <NavigationMenuLink href="#" className="hover:bg-[#6E59A5] px-3 py-2 rounded-md transition-colors">About Us</NavigationMenuLink>
+                      <NavigationMenuLink href="#" className="hover:bg-[#6E59A5] px-3 py-2 rounded-md transition-colors">Careers</NavigationMenuLink>
+                      <NavigationMenuLink href="#" className="hover:bg-[#6E59A5] px-3 py-2 rounded-md transition-colors">Contact</NavigationMenuLink>
                     </div>
                   </div>
                 </NavigationMenuContent>
