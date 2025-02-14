@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from "framer-motion";
 import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin } from "lucide-react";
@@ -720,4 +721,35 @@ const Index = () => {
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                  <li><a href="#" className="text-
+                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                </ul>
+              </div>
+
+              {/* Contact Info */}
+              <div>
+                <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <Building className="text-gray-400 w-4 h-4" />
+                    <span className="text-gray-400">+91 123 456 7890</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Mail className="text-gray-400 w-4 h-4" />
+                    <span className="text-gray-400">support@samarthx.com</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Copyright */}
+            <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+              <p className="text-gray-400">© 2024 SamarthX. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  );
+};
+
+export default Index;
