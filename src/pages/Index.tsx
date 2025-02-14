@@ -39,6 +39,7 @@ const Index: React.FC<IndexProps> = () => {
     title: "Comprehensive Management",
     description: "Complete school management solution from admissions to alumni"
   }];
+  
   const stats = [{
     number: "500+",
     label: "Schools"
@@ -52,6 +53,7 @@ const Index: React.FC<IndexProps> = () => {
     number: "24/7",
     label: "Support"
   }];
+  
   const floatingAnimation = {
     initial: {
       y: 0
@@ -65,6 +67,7 @@ const Index: React.FC<IndexProps> = () => {
       }
     }
   };
+  
   const newsItems = [{
     title: "Annual Science Fair 2024",
     date: "March 15, 2024",
@@ -81,6 +84,7 @@ const Index: React.FC<IndexProps> = () => {
     description: "Register now for the upcoming inter-school sports competition.",
     tag: "Sports"
   }];
+  
   const notices = [{
     title: "Parent-Teacher Meeting",
     date: "March 20, 2024",
@@ -97,6 +101,7 @@ const Index: React.FC<IndexProps> = () => {
     description: "Library will now remain open until 6 PM on weekdays.",
     priority: "Low"
   }];
+  
   const resourceItems = [{
     title: "Best Practices for Digital Learning in K-12 Education",
     type: "GUIDE",
@@ -128,6 +133,7 @@ const Index: React.FC<IndexProps> = () => {
     image: "https://images.unsplash.com/photo-1501286353178-1ec881214838",
     link: "/resources/inclusive-education"
   }];
+  
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data: any) => {
@@ -764,4 +770,68 @@ const Index: React.FC<IndexProps> = () => {
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <Instagram className="w-6 h-6" />
                 </a>
-                <
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Linkedin className="w-6 h-6" />
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Our Services</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Success Stories</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Support Center</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3 text-gray-400">
+                  <MapPin className="w-5 h-5" />
+                  <span>123 Education Street, Mumbai, India 400001</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-400">
+                  <Phone className="w-5 h-5" />
+                  <span>+91 (800) 123-4567</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-400">
+                  <Mail className="w-5 h-5" />
+                  <span>contact@samarthx.com</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-6">Resources</h4>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-700 mt-12 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-gray-400 text-sm">
+                © {new Date().getFullYear()} SamarthX. All rights reserved.
+              </p>
+              <div className="flex gap-6">
+                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
