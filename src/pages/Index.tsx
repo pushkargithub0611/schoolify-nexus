@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Brain, GraduationCap, Users, IndianRupee, School, FileBarChart, TrendingUp, Building } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import SchoolPerformanceDashboard from "@/components/SchoolPerformanceDashboard";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const Index = () => {
@@ -116,11 +115,12 @@ const Index = () => {
                   Get Started Today
                 </button>
               </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* School Performance Dashboard Section */}
+      {/* Interactive Visualization Section */}
       <section className="py-20 px-6 md:px-8 lg:px-12 bg-white">
         <div className="container max-w-7xl mx-auto">
           <motion.div
@@ -129,11 +129,84 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-4">School Performance Dashboard</h2>
-            <p className="text-neutral-600">Comprehensive analytics and insights for educational excellence</p>
+            <h2 className="text-4xl font-bold mb-4">Educational Impact Dashboard</h2>
+            <p className="text-neutral-600">Track and analyze educational progress across India</p>
           </motion.div>
 
-          <SchoolPerformanceDashboard />
+          {/* Filters */}
+          <Select>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Select a state" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="maharashtra">Maharashtra</SelectItem>
+              <SelectItem value="karnataka">Karnataka</SelectItem>
+              <SelectItem value="tamilnadu">Tamil Nadu</SelectItem>
+              {/* Add more states as needed */}
+            </SelectContent>
+          </Select>
+
+          {/* Stats Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="glass p-6 rounded-xl"
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-primary/10 rounded-lg">
+                  <Building className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold">Total Schools</h3>
+              </div>
+              <p className="text-4xl font-bold text-primary mb-2">4,500+</p>
+              <p className="text-neutral-600 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-green-500" />
+                <span>15% increase from last year</span>
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="glass p-6 rounded-xl"
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-primary/10 rounded-lg">
+                  <Users className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold">Total Students</h3>
+              </div>
+              <p className="text-4xl font-bold text-primary mb-2">1M+</p>
+              <p className="text-neutral-600 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-green-500" />
+                <span>25% increase from last year</span>
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="glass p-6 rounded-xl"
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-primary/10 rounded-lg">
+                  <FileBarChart className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold">Avg Performance</h3>
+              </div>
+              <p className="text-4xl font-bold text-primary mb-2">84.2%</p>
+              <p className="text-neutral-600 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-green-500" />
+                <span>5% increase from last year</span>
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
