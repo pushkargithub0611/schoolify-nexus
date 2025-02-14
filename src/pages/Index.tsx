@@ -127,14 +127,14 @@ const Index = () => {
               variants={floatingAnimation}
               initial="initial"
               animate="animate"
-              className="text-left lg:pl-8"
+              className="text-left lg:pl-8 max-w-md mx-auto lg:mx-0"
               style={{ animationDelay: "0.3s" }}
             >
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-block px-6 py-2 rounded-full bg-[#9b87f5]/20 text-[#9b87f5] text-sm font-medium mb-8"
+                className="inline-block px-4 py-1.5 rounded-full bg-[#9b87f5]/20 text-[#9b87f5] text-sm font-medium mb-6"
               >
                 Transform Your School Management
               </motion.span>
@@ -142,7 +142,7 @@ const Index = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-5xl md:text-7xl font-bold mb-8 leading-tight bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent"
+                className="text-4xl md:text-5xl font-bold mb-6 leading-tight bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent"
               >
                 Revolutionize Education Management
               </motion.h1>
@@ -150,7 +150,7 @@ const Index = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-xl text-white/70 mb-12 leading-relaxed"
+                className="text-lg text-white/70 mb-8 leading-relaxed"
               >
                 The complete school management solution designed specifically for Indian educational institutions, powered by cutting-edge AI technology.
               </motion.p>
@@ -159,7 +159,7 @@ const Index = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                <button className="bg-[#9b87f5] hover:bg-[#8b77e5] px-8 py-4 rounded-xl text-white font-medium transition-all duration-300 shadow-lg hover:shadow-[#9b87f5]/25">
+                <button className="bg-[#9b87f5] hover:bg-[#8b77e5] px-6 py-3 rounded-xl text-white font-medium transition-all duration-300 shadow-lg hover:shadow-[#9b87f5]/25">
                   Get Started Today
                 </button>
               </motion.div>
