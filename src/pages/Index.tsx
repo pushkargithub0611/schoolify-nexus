@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { Brain, GraduationCap, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon } from "lucide-react";
+import { Brain, GraduationCap, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 
 const Index = () => {
@@ -100,6 +101,39 @@ const Index = () => {
     description: "Library will now remain open until 6 PM on weekdays.",
     priority: "Low"
   }];
+
+  const resourceItems = [
+    {
+      title: "3 Ways Edtech Can Maximize Productivity in Understaffed K-12 Tech Teams",
+      type: "INFOGRAPHIC",
+      description: "Learn how interoperable, easy-to-use edtech products with robust training",
+      image: "/lovable-uploads/f641d362-8986-4fe7-99b4-4ef989ea89a0.png"
+    },
+    {
+      title: "3 Ways Edtech Can Maximize Productivity in Understaffed K-12 Tech Teams",
+      type: "INFOGRAPHIC",
+      description: "Learn how interoperable, easy-to-use edtech products with robust training",
+      image: "/lovable-uploads/f641d362-8986-4fe7-99b4-4ef989ea89a0.png"
+    },
+    {
+      title: "3 Ways Edtech Can Maximize Productivity in Understaffed K-12 Tech Teams",
+      type: "INFOGRAPHIC",
+      description: "Learn how interoperable, easy-to-use edtech products with robust training",
+      image: "/lovable-uploads/f641d362-8986-4fe7-99b4-4ef989ea89a0.png"
+    },
+    {
+      title: "3 Ways Edtech Can Maximize Productivity in Understaffed K-12 Tech Teams",
+      type: "INFOGRAPHIC",
+      description: "Learn how interoperable, easy-to-use edtech products with robust training",
+      image: "/lovable-uploads/f641d362-8986-4fe7-99b4-4ef989ea89a0.png"
+    },
+    {
+      title: "3 Ways Edtech Can Maximize Productivity in Understaffed K-12 Tech Teams",
+      type: "INFOGRAPHIC",
+      description: "Learn how interoperable, easy-to-use edtech products with robust training",
+      image: "/lovable-uploads/f641d362-8986-4fe7-99b4-4ef989ea89a0.png"
+    }
+  ];
 
   return <>
       <Header />
@@ -444,6 +478,48 @@ const Index = () => {
                   <p className="text-neutral-600">{stat.label}</p>
                 </motion.div>)}
             </div>
+          </div>
+        </section>
+
+        {/* Resources Section */}
+        <section className="py-20 px-6 md:px-8 lg:px-12 bg-cream-50">
+          <div className="container mx-auto">
+            <div className="flex justify-center mb-12">
+              <Button variant="outline" className="text-xl px-8 py-6 rounded-full border-2 border-black hover:bg-black hover:text-white transition-all">
+                View More Resources
+              </Button>
+            </div>
+
+            <Carousel className="w-full">
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {resourceItems.map((item, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                    >
+                      <div className="aspect-[4/3]">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="p-6">
+                        <p className="text-sm font-semibold text-primary mb-2">{item.type}</p>
+                        <h3 className="text-lg font-bold mb-2 line-clamp-2">{item.title}</h3>
+                        <p className="text-neutral-600 text-sm">{item.description}</p>
+                      </div>
+                    </motion.div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex -left-4" />
+              <CarouselNext className="hidden md:flex -right-4" />
+            </Carousel>
           </div>
         </section>
 
