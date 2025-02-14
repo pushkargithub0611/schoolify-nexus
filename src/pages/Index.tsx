@@ -1,7 +1,7 @@
+
 import { motion } from "framer-motion";
 import { Brain, GraduationCap, Users, IndianRupee, School, FileBarChart, TrendingUp, Building } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import SchoolPerformanceDashboard from "@/components/SchoolPerformanceDashboard";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const Index = () => {
@@ -116,24 +116,8 @@ const Index = () => {
                   Get Started Today
                 </button>
               </motion.div>
+            </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* School Performance Dashboard Section */}
-      <section className="py-20 px-6 md:px-8 lg:px-12 bg-white">
-        <div className="container max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold mb-4">School Performance Dashboard</h2>
-            <p className="text-neutral-600">Comprehensive analytics and insights for educational excellence</p>
-          </motion.div>
-
-          <SchoolPerformanceDashboard />
         </div>
       </section>
 
