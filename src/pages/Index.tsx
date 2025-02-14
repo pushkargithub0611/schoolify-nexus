@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { Brain, GraduationCap, Users, IndianRupee, School, FileBarChart, TrendingUp, Building } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
+
 const Index = () => {
   const features = [{
     icon: <Brain className="w-6 h-6" />,
@@ -108,7 +109,29 @@ const Index = () => {
     name: '2023',
     students: 1000000
   }];
-  return <div className="min-h-screen">
+
+  // Additional data for new charts
+  const performanceData = [
+    { month: 'Jan', performance: 82 },
+    { month: 'Feb', performance: 84 },
+    { month: 'Mar', performance: 85 },
+    { month: 'Apr', performance: 87 },
+    { month: 'May', performance: 86 },
+    { month: 'Jun', performance: 88 }
+  ];
+
+  const stateDistributionData = [
+    { name: 'Maharashtra', value: 1200 },
+    { name: 'Karnataka', value: 900 },
+    { name: 'Tamil Nadu', value: 1100 },
+    { name: 'Gujarat', value: 800 },
+    { name: 'Delhi', value: 500 }
+  ];
+
+  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
+
+  return (
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center py-16 px-4 md:px-8 lg:px-12 overflow-hidden rounded-2xl bg-violet-400 hover:bg-violet-300">
         <div className="container max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
@@ -328,29 +351,102 @@ const Index = () => {
             </motion.div>
           </div>
 
-          {/* Chart */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} className="glass p-6 rounded-xl">
-            <h3 className="text-xl font-semibold mb-6">Student Growth Trend</h3>
-            <div className="h-[400px]">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={chartData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Bar dataKey="students" fill="#9b87f5" />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </motion.div>
+          {/* Charts Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Student Growth Chart */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="glass p-6 rounded-xl"
+            >
+              <h3 className="text-xl font-semibold mb-6">Student Growth Trend</h3>
+              <div className="h-[300px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={chartData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Bar dataKey="students" fill="#9b87f5" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </motion.div>
+
+            {/* Performance Trend Chart */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="glass p-6 rounded-xl"
+            >
+              <h3 className="text-xl font-semibold mb-6">Performance Trend</h3>
+              <div className="h-[300px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={performanceData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="month" />
+                    <YAxis />
+                    <Tooltip />
+                    <Line type="monotone" dataKey="performance" stroke="#82ca9d" />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </motion.div>
+
+            {/* State Distribution Chart */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="glass p-6 rounded-xl"
+            >
+              <h3 className="text-xl font-semibold mb-6">Schools by State</h3>
+              <div className="h-[300px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={stateDistributionData}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={false}
+                      outerRadius={100}
+                      fill="#8884d8"
+                      dataKey="value"
+                      label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                    >
+                      {stateDistributionData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      ))}
+                    </Pie>
+                    <Tooltip />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+            </motion.div>
+
+            {/* Year-over-Year Comparison */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="glass p-6 rounded-xl"
+            >
+              <h3 className="text-xl font-semibold mb-6">Growth Comparison</h3>
+              <div className="h-[300px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={chartData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Bar dataKey="students" fill="#8884d8" name="Total Students" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -446,6 +542,8 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
