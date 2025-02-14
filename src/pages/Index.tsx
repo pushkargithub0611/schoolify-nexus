@@ -466,7 +466,7 @@ const Index: React.FC<IndexProps> = () => {
                 }} viewport={{
                   once: true
                 }} className="text-3xl md:text-4xl font-bold mb-4">
-                Why Choose Our Platform?\
+                Why Choose Our Platform?
               </motion.h2>
               <p className="text-neutral-600 max-w-2xl mx-auto">
                 Streamline your school operations with our comprehensive suite of
@@ -583,7 +583,7 @@ const Index: React.FC<IndexProps> = () => {
                 once: true
               }} className="max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Transform Your School Management?\
+                Ready to Transform Your School Management?
               </h2>
               <p className="text-neutral-600 mb-8">
                 Join hundreds of schools already benefiting from our AI-powered ERP platform
