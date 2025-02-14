@@ -147,7 +147,8 @@ const Index = () => {
     });
     console.log(data);
   };
-  return <div className="w-full">
+  return (
+    <div className="w-full">
       <Header />
       <div className="min-h-screen">
         {/* Hero Section */}
@@ -158,7 +159,8 @@ const Index = () => {
               <motion.div variants={floatingAnimation} initial="initial" animate="animate" className="relative w-full max-w-3xl mx-auto lg:mx-0">
                 <Carousel className="w-full">
                   <CarouselContent>
-                    {carouselImages.map((image, index) => <CarouselItem key={index}>
+                    {carouselImages.map((image, index) => (
+                      <CarouselItem key={index}>
                         <motion.div initial={{
                       opacity: 0,
                       scale: 0.95
@@ -180,7 +182,8 @@ const Index = () => {
                             </div>
                           </div>
                         </motion.div>
-                      </CarouselItem>)}
+                      </CarouselItem>
+                    ))}
                   </CarouselContent>
                   <CarouselPrevious className="hidden md:flex -left-4 bg-white/10 hover:bg-white/20 text-white border-none" />
                   <CarouselNext className="hidden md:flex -right-4 bg-white/10 hover:bg-white/20 text-white border-none" />
@@ -378,7 +381,8 @@ const Index = () => {
                   <h2 className="text-2xl font-bold">Latest News</h2>
                 </div>
                 <div className="space-y-4">
-                  {newsItems.map((news, index) => <Card key={index} className="hover:shadow-lg transition-shadow">
+                  {newsItems.map((news, index) => (
+                    <Card key={index} className="hover:shadow-lg transition-shadow">
                       <CardHeader>
                         <div className="flex justify-between items-start">
                           <div>
@@ -393,7 +397,8 @@ const Index = () => {
                       <CardContent>
                         <p className="text-neutral-600">{news.description}</p>
                       </CardContent>
-                    </Card>)}
+                    </Card>
+                  ))}
                 </div>
               </motion.div>
 
@@ -412,7 +417,8 @@ const Index = () => {
                   <h2 className="text-2xl font-bold">Important Notices</h2>
                 </div>
                 <div className="space-y-4">
-                  {notices.map((notice, index) => <Card key={index} className="hover:shadow-lg transition-shadow">
+                  {notices.map((notice, index) => (
+                    <Card key={index} className="hover:shadow-lg transition-shadow">
                       <CardHeader>
                         <div className="flex justify-between items-start">
                           <div>
@@ -427,7 +433,8 @@ const Index = () => {
                       <CardContent>
                         <p className="text-neutral-600">{notice.description}</p>
                       </CardContent>
-                    </Card>)}
+                    </Card>
+                  ))}
                 </div>
               </motion.div>
             </div>
@@ -456,7 +463,8 @@ const Index = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => <motion.div key={index} initial={{
+              {features.map((feature, index) => (
+                <motion.div key={index} initial={{
               opacity: 0,
               y: 20
             }} whileInView={{
@@ -472,7 +480,8 @@ const Index = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                   <p className="text-neutral-600">{feature.description}</p>
-                </motion.div>)}
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -481,7 +490,8 @@ const Index = () => {
         <section className="py-20 px-6 md:px-8 lg:px-12 bg-neutral-50">
           <div className="container mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => <motion.div key={index} initial={{
+              {stats.map((stat, index) => (
+                <motion.div key={index} initial={{
               opacity: 0,
               scale: 0.9
             }} whileInView={{
@@ -496,7 +506,8 @@ const Index = () => {
                     {stat.number}
                   </h3>
                   <p className="text-neutral-600">{stat.label}</p>
-                </motion.div>)}
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -512,7 +523,8 @@ const Index = () => {
 
             <Carousel className="w-full">
               <CarouselContent className="-ml-2 md:-ml-4">
-                {resourceItems.map((item, index) => <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                {resourceItems.map((item, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                     <motion.div initial={{
                   opacity: 0,
                   y: 20
@@ -533,7 +545,8 @@ const Index = () => {
                         <p className="text-neutral-600 text-sm">{item.description}</p>
                       </div>
                     </motion.div>
-                  </CarouselItem>)}
+                  </CarouselItem>
+                ))}
               </CarouselContent>
               <CarouselPrevious className="hidden md:flex -left-4" />
               <CarouselNext className="hidden md:flex -right-4" />
@@ -589,59 +602,83 @@ const Index = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <input type="text" placeholder="First Name" {...register("firstName", {
-                        required: true
-                      })} className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md" />
+                      <input
+                        type="text"
+                        placeholder="First Name"
+                        {...register("firstName", { required: true })}
+                        className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
+                      />
                     </div>
                     <div>
-                      <input type="text" placeholder="Last Name" {...register("lastName", {
-                        required: true
-                      })} className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md" />
+                      <input
+                        type="text"
+                        placeholder="Last Name"
+                        {...register("lastName", { required: true })}
+                        className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
+                      />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <input type="email" placeholder="Email" {...register("email", {
-                        required: true,
-                        pattern: /^\S+@\S+$/i
-                      })} className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md" />
+                      <input
+                        type="email"
+                        placeholder="Email"
+                        {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+                        className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
+                      />
                     </div>
                     <div>
-                      <input type="tel" placeholder="Phone Number" {...register("phone", {
-                        required: true
-                      })} className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md" />
+                      <input
+                        type="tel"
+                        placeholder="Phone Number"
+                        {...register("phone", { required: true })}
+                        className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
+                      />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <input type="text" placeholder="Job Title" {...register("jobTitle", {
-                        required: true
-                      })} className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md" />
+                      <input
+                        type="text"
+                        placeholder="Job Title"
+                        {...register("jobTitle", { required: true })}
+                        className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
+                      />
                     </div>
                     <div>
-                      <input type="text" placeholder="School/District" {...register("school", {
-                        required: true
-                      })} className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md" />
+                      <input
+                        type="text"
+                        placeholder="School/District"
+                        {...register("school", { required: true })}
+                        className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
+                      />
                     </div>
                   </div>
 
-                  <select {...register("country", {
-                    required: true
-                  })} className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md">
+                  <select
+                    {...register("country", { required: true })}
+                    className="w-full px-4 py-2 bg-white border-b border-gray-300 text-black placeholder-gray-600 focus:outline-none focus:border-white rounded-md"
+                  >
                     <option value="" className="text-gray-800">Select Country</option>
                     <option value="india" className="text-gray-800">India</option>
                     <option value="usa" className="text-gray-800">United States</option>
                     <option value="uk" className="text-gray-800">United Kingdom</option>
                   </select>
 
-                  <textarea placeholder="How can we help you?" {...register("message", {
-                    required: true
-                  })} rows={4} className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-600 focus:outline-none focus:border-white resize-none"></textarea>
+                  <textarea
+                    placeholder="How can we help you?"
+                    {...register("message", { required: true })}
+                    rows={4}
+                    className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-600 focus:outline-none focus:border-white resize-none"
+                  ></textarea>
 
                   <div className="text-center">
-                    <Button type="submit" className="px-8 py-3 bg-[#ea384c] text-white rounded-full hover:bg-[#d62f41] transition-colors">
+                    <Button 
+                      type="submit"
+                      className="px-8 py-3 bg-[#ea384c] text-white rounded-full hover:bg-[#d62f41] transition-colors"
+                    >
                       Submit
                     </Button>
                   </div>
@@ -694,12 +731,4 @@ const Index = () => {
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Our Services</a></li>
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                </ul>
-              </div>
-
-              {/* Resources */}
-              <div>
-                <h4 className="text-lg font-semibold mb-4">Resources</h4>
-                <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Documentation
+                  <li><a href="#"
