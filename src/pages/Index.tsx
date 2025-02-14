@@ -1,6 +1,7 @@
+<lov-code>
 import * as React from 'react';
 import { motion } from "framer-motion";
-import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin } from "lucide-react";
+import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin, Facebook, Instagram, Phone, MapPin } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -721,8 +722,36 @@ const Index: React.FC<IndexProps> = () => {
 
         
       </main>
-    </div>
-  );
-};
+      {/* Footer */}
+      <footer className="bg-[#1A1F2C] text-white">
+        <div className="container mx-auto px-4 py-16">
+          {/* Main Footer Content */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {/* Company Info */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold">
+                Samarth<span className="text-[#FF9933]">X</span>
+              </h3>
+              <p className="text-gray-400">
+                Empowering educational institutions with cutting-edge technology solutions.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Facebook className="w-6 h-6" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Twitter className="w-6 h-6" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Instagram className="w-6 h-6" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Linkedin className="w-6 h-6" />
+                </a>
+              </div>
+            </div>
 
-export default Index;
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+              <ul className
