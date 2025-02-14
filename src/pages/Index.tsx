@@ -1,8 +1,8 @@
+
 import { motion } from "framer-motion";
 import { Brain, GraduationCap, Users, IndianRupee, School, FileBarChart, TrendingUp, Building } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { TrendingUp } from "lucide-react";
 import IndiaMap from '@/components/IndiaMap';
 
 const Index = () => {
