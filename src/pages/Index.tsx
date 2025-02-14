@@ -5,6 +5,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
+import { useForm } from "react-hook-form";
+import { toast } from "@/components/ui/use-toast";
 
 const Index = () => {
   const features = [{
@@ -139,6 +141,16 @@ const Index = () => {
       link: "/resources/inclusive-education"
     }
   ];
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = (data: any) => {
+    toast({
+      title: "Form submitted!",
+      description: "We'll get back to you soon.",
+    });
+    console.log(data);
+  };
 
   return <>
       <Header />
@@ -555,6 +567,125 @@ const Index = () => {
                 Schedule a Demo
               </button>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Contact Form Section */}
+        <section className="relative bg-[#003B73] text-white overflow-hidden">
+          <div className="absolute bottom-0 left-0 right-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full">
+              <path fill="#ffffff" fillOpacity="1" d="M0,96L1440,32L1440,320L0,320Z"></path>
+            </svg>
+          </div>
+          
+          <div className="container mx-auto px-4 py-16 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              {/* Left side - Image */}
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/44e86e35-6119-4877-8958-dd0ec9bdbf3a.png"
+                  alt="Education consultation"
+                  className="rounded-lg w-full"
+                />
+              </div>
+
+              {/* Right side - Form */}
+              <div className="space-y-6">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <h2 className="text-4xl font-bold mb-4">Let's Connect!</h2>
+                  <p className="text-gray-200 mb-8">
+                    Fill out the form below to connect with our sales team to discuss how SamarthX can help with your specific school or district needs.
+                  </p>
+
+                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <input
+                          type="text"
+                          placeholder="First Name"
+                          {...register("firstName", { required: true })}
+                          className="w-full px-4 py-2 bg-transparent border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white"
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          placeholder="Last Name"
+                          {...register("lastName", { required: true })}
+                          className="w-full px-4 py-2 bg-transparent border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <input
+                          type="email"
+                          placeholder="Email"
+                          {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+                          className="w-full px-4 py-2 bg-transparent border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white"
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="tel"
+                          placeholder="Phone Number"
+                          {...register("phone", { required: true })}
+                          className="w-full px-4 py-2 bg-transparent border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <input
+                          type="text"
+                          placeholder="Job Title"
+                          {...register("jobTitle", { required: true })}
+                          className="w-full px-4 py-2 bg-transparent border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white"
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          placeholder="School/District"
+                          {...register("school", { required: true })}
+                          className="w-full px-4 py-2 bg-transparent border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white"
+                        />
+                      </div>
+                    </div>
+
+                    <select
+                      {...register("country", { required: true })}
+                      className="w-full px-4 py-2 bg-transparent border-b border-gray-300 text-white placeholder-gray-300 focus:outline-none focus:border-white"
+                    >
+                      <option value="" className="text-gray-800">Select Country</option>
+                      <option value="india" className="text-gray-800">India</option>
+                      <option value="usa" className="text-gray-800">United States</option>
+                      <option value="uk" className="text-gray-800">United Kingdom</option>
+                    </select>
+
+                    <textarea
+                      placeholder="How can we help you?"
+                      {...register("message", { required: true })}
+                      rows={4}
+                      className="w-full px-4 py-2 bg-transparent border border-gray-300 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-white resize-none"
+                    ></textarea>
+
+                    <Button 
+                      type="submit"
+                      className="px-8 py-3 bg-[#ea384c] text-white rounded-full hover:bg-[#d62f41] transition-colors"
+                    >
+                      Submit
+                    </Button>
+                  </form>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </section>
       </div>
