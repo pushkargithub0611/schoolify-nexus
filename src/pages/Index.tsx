@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import { motion } from "framer-motion";
 import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin, Facebook, Instagram, Phone, MapPin } from "lucide-react";
@@ -13,6 +12,16 @@ import { toast } from "@/components/ui/use-toast";
 interface IndexProps {}
 
 const Index: React.FC<IndexProps> = () => {
+  const carouselImages = [{
+    url: "/lovable-uploads/4fce841a-0b68-4e32-9bfc-206a104935fc.png",
+    caption: "Transform Your School",
+    description: "Join the digital education revolution with SamarthX"
+  }, {
+    url: "/lovable-uploads/348f864a-091f-4612-90cc-0ff0ac317410.png",
+    caption: "Modern Digital Classrooms",
+    description: "Experience next-generation learning environments powered by AI and cutting-edge technology"
+  }];
+
   const features = [{
     icon: <Brain className="w-6 h-6" />,
     title: "AI-Powered Insights",
@@ -42,23 +51,6 @@ const Index: React.FC<IndexProps> = () => {
   }, {
     number: "24/7",
     label: "Support"
-  }];
-  const carouselImages = [{
-    url: "https://images.unsplash.com/photo-1613898239254-8c8f384c2336",
-    caption: "Modern Digital Classrooms",
-    description: "Experience next-generation learning environments powered by AI and cutting-edge technology"
-  }, {
-    url: "https://images.unsplash.com/photo-1627556704302-624286467c65",
-    caption: "Interactive Learning Experience",
-    description: "Enable engaging and interactive learning experiences with our comprehensive digital tools"
-  }, {
-    url: "https://images.unsplash.com/photo-1617529497471-9218633199c0",
-    caption: "Smart Education Solutions",
-    description: "Implement smart solutions that transform traditional education into modern learning experiences"
-  }, {
-    url: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
-    caption: "Empowering Education",
-    description: "Empower educators with tools that make teaching more effective and learning more engaging"
   }];
   const floatingAnimation = {
     initial: {
@@ -163,13 +155,21 @@ const Index: React.FC<IndexProps> = () => {
                           initial={{
                             opacity: 0,
                             scale: 0.95
-                          }} animate={{
+                          }}
+                          animate={{
                             opacity: 1,
                             scale: 1
-                          }} transition={{
+                          }}
+                          transition={{
                             delay: index * 0.1
-                          }} className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl">
-                          <img src={image.url} alt={image.caption} className="w-full h-full object-cover" />
+                          }}
+                          className="relative aspect-[16/9] overflow-hidden rounded-2xl shadow-2xl"
+                        >
+                          <img
+                            src={image.url}
+                            alt={image.caption}
+                            className="w-full h-full object-cover"
+                          />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
                             <div className="absolute bottom-0 left-0 right-0 p-8">
                               <h3 className="text-white text-2xl font-bold mb-3">
@@ -188,6 +188,7 @@ const Index: React.FC<IndexProps> = () => {
                   <CarouselNext className="hidden md:flex -right-4 bg-white/10 hover:bg-white/20 text-white border-none" />
                 </Carousel>
               </motion.div>
+              
               <motion.div variants={floatingAnimation} initial="initial" animate="animate" className="text-left lg:pl-12" style={{
                   animationDelay: "0.3s"
                 }}>
@@ -244,6 +245,7 @@ const Index: React.FC<IndexProps> = () => {
             </div>
           </div>
         </section>
+
         <section className="py-20 px-6 md:px-8 lg:px-12 bg-white">
           <div className="container max-w-7xl mx-auto">
             <motion.div initial={{
@@ -763,58 +765,3 @@ const Index: React.FC<IndexProps> = () => {
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <Instagram className="w-6 h-6" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Linkedin className="w-6 h-6" />
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Our Services</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Success Stories</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Support Center</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3 text-gray-400">
-                  <MapPin className="w-5 h-5" />
-                  <span>123 Education Street, Mumbai, India 400001</span>
-                </li>
-                <li className="flex items-center gap-3 text-gray-400">
-                  <Phone className="w-5 h-5" />
-                  <span>+91 (800) 123-4567</span>
-                </li>
-                <li className="flex items-center gap-3 text-gray-400">
-                  <Mail className="w-5 h-5" />
-                  <span>contact@samarthx.com</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-700 mt-12 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-gray-400 text-sm">
-                © {new Date().getFullYear()} SamarthX. All rights reserved.
-              </p>
-              <div className="flex gap-6">
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-};
-
-export default Index;
