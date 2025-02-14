@@ -1,4 +1,3 @@
-<lov-code>
 import * as React from 'react';
 import { motion } from "framer-motion";
 import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin, Facebook, Instagram, Phone, MapPin } from "lucide-react";
@@ -754,4 +753,4 @@ const Index: React.FC<IndexProps> = () => {
               <h3 className="text-2xl font-bold">
                 Samarth<span className="text-[#FF9933]">X</span>
               </h3>
-              <p className="text-gray-400
+              <p className="text-gray-400">
