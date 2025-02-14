@@ -1,4 +1,3 @@
-<lov-code>
 import * as React from 'react';
 import { motion } from "framer-motion";
 import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin, Facebook, Instagram, Phone, MapPin } from "lucide-react";
@@ -149,6 +148,7 @@ const Index: React.FC<IndexProps> = () => {
     <div className="w-full">
       <Header />
       <main className="min-h-screen">
+        {/* Hero Section */}
         <section className="min-h-[90vh] flex items-center justify-center py-20 px-4 md:px-8 lg:px-12 overflow-hidden rounded-2xl bg-violet-400 hover:bg-violet-300">
           <div className="container max-w-[1920px] mx-auto px-4 md:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -252,6 +252,7 @@ const Index: React.FC<IndexProps> = () => {
           </div>
         </section>
 
+        {/* Dashboard Section */}
         <section className="py-20 px-6 md:px-8 lg:px-12 bg-white">
           <div className="container max-w-7xl mx-auto">
             <motion.div initial={{
@@ -380,6 +381,8 @@ const Index: React.FC<IndexProps> = () => {
             </motion.div>
           </div>
         </section>
+
+        {/* News and Notices Section */}
         <section className="py-20 px-6 md:px-8 lg:px-12 bg-neutral-50">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -463,6 +466,8 @@ const Index: React.FC<IndexProps> = () => {
             </div>
           </div>
         </section>
+
+        {/* Features Section */}
         <section className="py-20 px-6 md:px-8 lg:px-12 bg-white">
           <div className="container mx-auto">
             <div className="text-center mb-16">
@@ -475,7 +480,7 @@ const Index: React.FC<IndexProps> = () => {
                 }} viewport={{
                   once: true
                 }} className="text-3xl md:text-4xl font-bold mb-4">
-                Why Choose Our Platform?
+                Why Choose Our Platform?\
               </motion.h2>
               <p className="text-neutral-600 max-w-2xl mx-auto">
                 Streamline your school operations with our comprehensive suite of
@@ -509,6 +514,8 @@ const Index: React.FC<IndexProps> = () => {
             </div>
           </div>
         </section>
+
+        {/* Stats Section */}
         <section className="py-20 px-6 md:px-8 lg:px-12 bg-neutral-50">
           <div className="container mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -535,6 +542,8 @@ const Index: React.FC<IndexProps> = () => {
             </div>
           </div>
         </section>
+
+        {/* Resources Section */}
         <section className="py-20 px-6 md:px-8 lg:px-12 bg-cream-50">
           <div className="container mx-auto">
             <div className="flex justify-center mb-12">
@@ -580,6 +589,8 @@ const Index: React.FC<IndexProps> = () => {
             </Carousel>
           </div>
         </section>
+
+        {/* CTA Section */}
         <section className="py-20 px-6 md:px-8 lg:px-12 bg-white">
           <div className="container mx-auto text-center">
             <motion.div initial={{
@@ -603,7 +614,8 @@ const Index: React.FC<IndexProps> = () => {
             </motion.div>
           </div>
         </section>
-        
+
+        {/* Contact Section */}
         <section className="relative bg-[#0EA5E9] overflow-hidden">
           <div className="absolute bottom-0 left-0 right-0">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full">
@@ -764,8 +776,3 @@ const Index: React.FC<IndexProps> = () => {
               <div className="flex space-x-4">
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <Facebook className="w-6 h-6" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Twitter className="w-6 h-6" />
-                </a>
-                <a href="#" className="text-gray
