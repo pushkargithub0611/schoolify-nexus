@@ -1,3 +1,4 @@
+<lov-code>
 import * as React from 'react';
 import { motion } from "framer-motion";
 import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin, Facebook, Instagram, Phone, MapPin } from "lucide-react";
@@ -767,4 +768,4 @@ const Index: React.FC<IndexProps> = () => {
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <Twitter className="w-6 h-6" />
                 </a>
-                <a href="#" className="text-gray-40
+                <a href="#" className="text-gray
