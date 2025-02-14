@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 import { motion } from "framer-motion";
 import { Brain, Users, IndianRupee, School, FileBarChart, TrendingUp, Building, Bell, NewspaperIcon, Mail, Twitter, Linkedin, Facebook, Instagram, Phone, MapPin } from "lucide-react";
@@ -721,6 +722,7 @@ const Index: React.FC<IndexProps> = () => {
 
         
       </main>
+
       {/* Footer */}
       <footer className="bg-[#1A1F2C] text-white">
         <div className="container mx-auto px-4 py-16">
@@ -753,4 +755,64 @@ const Index: React.FC<IndexProps> = () => {
             {/* Quick Links */}
             <div>
               <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
-              <ul className="space-
+              <ul className="space-y-3">
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Our Services</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Success Stories</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Support Center</a></li>
+              </ul>
+            </div>
+
+            {/* Solutions */}
+            <div>
+              <h4 className="text-lg font-semibold mb-6">Solutions</h4>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">School Management</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Learning Management</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Student Information System</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Analytics Dashboard</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Mobile App</a></li>
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3 text-gray-400">
+                  <MapPin className="w-5 h-5" />
+                  <span>123 Education Street, Mumbai, India 400001</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-400">
+                  <Phone className="w-5 h-5" />
+                  <span>+91 (800) 123-4567</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-400">
+                  <Mail className="w-5 h-5" />
+                  <span>contact@samarthx.com</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Footer */}
+          <div className="border-t border-gray-700 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-gray-400 text-sm">
+                © {new Date().getFullYear()} SamarthX. All rights reserved.
+              </p>
+              <div className="flex gap-6">
+                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
