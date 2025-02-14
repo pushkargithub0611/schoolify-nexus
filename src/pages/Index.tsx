@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Brain, GraduationCap, Users, IndianRupee, School } from "lucide-react";
 import {
@@ -80,34 +81,12 @@ const Index = () => {
       <section className="hero-gradient min-h-[90vh] flex items-center justify-center section-padding overflow-hidden">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Text Content */}
+            {/* Carousel - Now on the left */}
             <motion.div
               variants={floatingAnimation}
               initial="initial"
               animate="animate"
-              className="text-white"
-            >
-              <span className="inline-block px-4 py-2 rounded-full bg-white/10 text-sm mb-6">
-                Transform Your School Management
-              </span>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Revolutionize Education Management with AI-Powered ERP
-              </h1>
-              <p className="text-lg md:text-xl mb-8 text-white/90">
-                The complete school management solution designed specifically for Indian educational institutions
-              </p>
-              <button className="glass px-8 py-4 rounded-lg text-white font-medium hover:bg-white/30 transition-all">
-                Get Started Today
-              </button>
-            </motion.div>
-
-            {/* Carousel */}
-            <motion.div
-              variants={floatingAnimation}
-              initial="initial"
-              animate="animate"
-              className="relative"
-              style={{ animationDelay: "0.5s" }}
+              className="relative order-2 lg:order-1"
             >
               <Carousel className="w-full">
                 <CarouselContent>
@@ -141,6 +120,28 @@ const Index = () => {
                 <CarouselPrevious className="hidden md:flex -left-4 bg-white/20 hover:bg-white/30 text-white border-none" />
                 <CarouselNext className="hidden md:flex -right-4 bg-white/20 hover:bg-white/30 text-white border-none" />
               </Carousel>
+            </motion.div>
+
+            {/* Text Content - Now on the right */}
+            <motion.div
+              variants={floatingAnimation}
+              initial="initial"
+              animate="animate"
+              className="text-white order-1 lg:order-2"
+              style={{ animationDelay: "0.5s" }}
+            >
+              <span className="inline-block px-4 py-2 rounded-full bg-white/10 text-sm mb-6">
+                Transform Your School Management
+              </span>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Revolutionize Education Management with AI-Powered ERP
+              </h1>
+              <p className="text-lg md:text-xl mb-8 text-white/90">
+                The complete school management solution designed specifically for Indian educational institutions
+              </p>
+              <button className="glass px-8 py-4 rounded-lg text-white font-medium hover:bg-white/30 transition-all">
+                Get Started Today
+              </button>
             </motion.div>
           </div>
         </div>
