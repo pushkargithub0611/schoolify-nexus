@@ -121,42 +121,42 @@ const Index = () => {
   ];
 
   const stateDistributionData = [
-    { state: 'Uttar Pradesh', schools: 1500 },
-    { state: 'Maharashtra', schools: 1200 },
-    { state: 'Bihar', schools: 1150 },
-    { state: 'West Bengal', schools: 950 },
-    { state: 'Madhya Pradesh', schools: 850 },
-    { state: 'Tamil Nadu', schools: 1100 },
-    { state: 'Rajasthan', schools: 850 },
-    { state: 'Karnataka', schools: 900 },
-    { state: 'Gujarat', schools: 800 },
-    { state: 'Andhra Pradesh', schools: 800 },
-    { state: 'Odisha', schools: 650 },
-    { state: 'Telangana', schools: 600 },
-    { state: 'Kerala', schools: 750 },
-    { state: 'Jharkhand', schools: 580 },
-    { state: 'Assam', schools: 520 },
-    { state: 'Punjab', schools: 550 },
-    { state: 'Chhattisgarh', schools: 480 },
-    { state: 'Haryana', schools: 450 },
-    { state: 'Delhi', schools: 500 },
-    { state: 'Jammu and Kashmir', schools: 420 },
-    { state: 'Uttarakhand', schools: 380 },
-    { state: 'Himachal Pradesh', schools: 350 },
-    { state: 'Tripura', schools: 280 },
-    { state: 'Meghalaya', schools: 260 },
-    { state: 'Manipur', schools: 240 },
-    { state: 'Nagaland', schools: 220 },
-    { state: 'Goa', schools: 200 },
-    { state: 'Arunachal Pradesh', schools: 180 },
-    { state: 'Puducherry', schools: 150 },
-    { state: 'Mizoram', schools: 140 },
-    { state: 'Sikkim', schools: 130 },
-    { state: 'Andaman and Nicobar Islands', schools: 120 },
-    { state: 'Dadra and Nagar Haveli', schools: 90 },
-    { state: 'Daman and Diu', schools: 80 },
-    { state: 'Lakshadweep', schools: 50 },
-    { state: 'Ladakh', schools: 70 }
+    { state: 'Uttar Pradesh', schools: 15500 },
+    { state: 'Maharashtra', schools: 12000 },
+    { state: 'Bihar', schools: 11500 },
+    { state: 'Tamil Nadu', schools: 11000 },
+    { state: 'West Bengal', schools: 9500 },
+    { state: 'Karnataka', schools: 9000 },
+    { state: 'Madhya Pradesh', schools: 8500 },
+    { state: 'Rajasthan', schools: 8500 },
+    { state: 'Gujarat', schools: 8000 },
+    { state: 'Andhra Pradesh', schools: 8000 },
+    { state: 'Kerala', schools: 7500 },
+    { state: 'Odisha', schools: 6500 },
+    { state: 'Telangana', schools: 6000 },
+    { state: 'Jharkhand', schools: 5800 },
+    { state: 'Punjab', schools: 5500 },
+    { state: 'Assam', schools: 5200 },
+    { state: 'Delhi', schools: 5000 },
+    { state: 'Chhattisgarh', schools: 4800 },
+    { state: 'Haryana', schools: 4500 },
+    { state: 'Jammu and Kashmir', schools: 4200 },
+    { state: 'Uttarakhand', schools: 3800 },
+    { state: 'Himachal Pradesh', schools: 3500 },
+    { state: 'Tripura', schools: 2800 },
+    { state: 'Meghalaya', schools: 2600 },
+    { state: 'Manipur', schools: 2400 },
+    { state: 'Nagaland', schools: 2200 },
+    { state: 'Goa', schools: 2000 },
+    { state: 'Arunachal Pradesh', schools: 1800 },
+    { state: 'Puducherry', schools: 1500 },
+    { state: 'Mizoram', schools: 1400 },
+    { state: 'Sikkim', schools: 1300 },
+    { state: 'Andaman and Nicobar Islands', schools: 1200 },
+    { state: 'Dadra and Nagar Haveli', schools: 900 },
+    { state: 'Daman and Diu', schools: 800 },
+    { state: 'Ladakh', schools: 700 },
+    { state: 'Lakshadweep', schools: 500 }
   ];
 
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
@@ -434,27 +434,38 @@ const Index = () => {
               className="glass p-6 rounded-xl"
             >
               <h3 className="text-xl font-semibold mb-6">Schools by State</h3>
-              <div className="h-[300px]">
+              <div className="h-[600px]"> {/* Increased height for better readability */}
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart 
-                    data={stateDistributionData} 
+                  <BarChart
+                    data={stateDistributionData}
                     layout="vertical"
-                    margin={{ top: 5, right: 30, left: 100, bottom: 5 }}
+                    margin={{ top: 5, right: 30, left: 120, bottom: 5 }} // Increased left margin
                   >
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis type="number" />
-                    <YAxis 
-                      dataKey="state" 
-                      type="category" 
-                      tick={{ fontSize: 12 }} 
-                      width={100}
+                    <XAxis
+                      type="number"
+                      tickFormatter={(value) => `${value.toLocaleString()}`} // Format large numbers
                     />
-                    <Tooltip />
-                    <Bar 
-                      dataKey="schools" 
+                    <YAxis
+                      dataKey="state"
+                      type="category"
+                      tick={{ fontSize: 11 }} // Adjusted font size
+                      width={120} // Increased width for state names
+                      interval={0} // Show all labels
+                    />
+                    <Tooltip
+                      formatter={(value) => [`${value.toLocaleString()} schools`, 'Number of Schools']}
+                      labelStyle={{ color: '#666' }}
+                    />
+                    <Bar
+                      dataKey="schools"
                       fill="#8884d8"
                       name="Number of Schools"
-                    />
+                    >
+                      {stateDistributionData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={`hsl(${index * (360 / stateDistributionData.length)}, 70%, 60%)`} />
+                      ))}
+                    </Bar>
                   </BarChart>
                 </ResponsiveContainer>
               </div>
